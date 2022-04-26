@@ -3,6 +3,8 @@ package com.example.demo.Model;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -10,11 +12,15 @@ import javax.persistence.*;
 @Setter
 @ToString
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id", nullable = false)
   private Long id;
+  @NotBlank
+  @Size(max = 20)
+  private String username;
+  private String password;
 
 }
