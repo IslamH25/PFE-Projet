@@ -8,9 +8,7 @@ import javax.validation.constraints.Size;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
-@ToString
+@Data
 @Entity
 @Table(name = "users")
 public class User {
@@ -22,5 +20,7 @@ public class User {
   @Size(max = 20)
   private String username;
   private String password;
+  private boolean isActive;
+  private String role;
 
 }
