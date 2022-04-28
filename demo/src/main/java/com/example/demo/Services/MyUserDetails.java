@@ -1,6 +1,7 @@
 package com.example.demo.Services;
 
 import com.example.demo.Model.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,31 +9,52 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class MyUserDetails implements UserDetails {
   private static final long serialVersionUID = 1L;
-
-  private String userName;
+  private Long id;
+  private String username;
+  @JsonIgnore
   private String password;
-  private boolean isActive;
-  private List<GrantedAuthority> authorities;
-  public MyUserDetails(User user){
-    this.userName=user.getUsername();
-    this.password=user.getPassword();
-    this.isActive=user.isActive();
-    this.authorities= Arrays.stream(user.getRole().split(",")).map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+  private Collection<? extends GrantedAuthority> authorities;
+
+
+  public MyUserDetails(Long id, String username, String password, String role,Collection<? extends GrantedAuthority> authorities) {
+    this.id = id;
+    this.username = username;
+    this.password = password;
+    this.authorities=authorities;
+  }
+
+  public MyUserDetails(Long id, String username, String password, List<GrantedAuthority> authorities) {
+  }
+
+
+  public static MyUserDetails build(User user) {
+
+    List<GrantedAuthority> authorities = user.getRoles().stream()
+      .map(role -> new SimpleGrantedAuthority(role.getName().name()))
+      .collect(Collectors.toList());
+    return new MyUserDetails(
+      user.getId(),
+      user.getUsername(),
+      user.getPassword(),
+      authorities);
   }
   @Override
   public String getUsername(){
-    return userName;
+    return username;
   }
 
   @Override
   public boolean isAccountNonExpired() {
     return true;
   }
-
+  public Long getId() {
+    return id;
+  }
   @Override
   public boolean isAccountNonLocked() {
     return true;
@@ -54,6 +76,15 @@ public class MyUserDetails implements UserDetails {
   }
   @Override
   public boolean isEnabled(){
-    return isActive;
+    return true;
+  }
+  @Override
+  public boolean equals(Object o) {
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
+    MyUserDetails user = (MyUserDetails) o;
+    return Objects.equals(id, user.id);
   }
 }

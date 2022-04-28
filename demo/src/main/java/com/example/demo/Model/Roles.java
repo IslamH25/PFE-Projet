@@ -11,10 +11,12 @@ import javax.persistence.*;
 @Data
 public class Roles {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id", nullable = false)
   private Long id;
-  private String libelle;
+  @Enumerated(EnumType.STRING)
+  @Column(length = 20)
+  private ERole name;
   }
 
 
