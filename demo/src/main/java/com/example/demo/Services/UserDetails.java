@@ -4,79 +4,41 @@ import com.example.demo.Model.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class MyUserDetails implements UserDetails {
+public class UserDetails implements org.springframework.security.core.userdetails.UserDetails {
   private static final long serialVersionUID = 1L;
   private Long id;
   private String username;
-<<<<<<< HEAD
-  @JsonIgnore
-  private String password;
-  private Collection<? extends GrantedAuthority> authorities;
-
-
-  public MyUserDetails(Long id, String username, String password, String role,Collection<? extends GrantedAuthority> authorities) {
-    this.id = id;
-    this.username = username;
-    this.password = password;
-    this.authorities=authorities;
-  }
-
-  public MyUserDetails(Long id, String username, String password, List<GrantedAuthority> authorities) {
-  }
-
-
-  public static MyUserDetails build(User user) {
-
-=======
 
   @JsonIgnore
   private String password;
   private Collection<? extends GrantedAuthority> authorities;
-  public MyUserDetails(Long id, String username,  String password,
-                         Collection<? extends GrantedAuthority> authorities) {
+  public UserDetails(Long id, String username, String password,
+                     Collection<? extends GrantedAuthority> authorities) {
     this.id = id;
     this.username = username;
 
     this.password = password;
     this.authorities = authorities;
   }
-  public static MyUserDetails build(User user) {
->>>>>>> c6d297a (Corriger le problème d'authentification)
+  public static UserDetails build(User user) {
+
     List<GrantedAuthority> authorities = user.getRoles().stream()
       .map(role -> new SimpleGrantedAuthority(role.getName().name()))
       .collect(Collectors.toList());
-    return new MyUserDetails(
+    return new UserDetails(
       user.getId(),
       user.getUsername(),
-<<<<<<< HEAD
-=======
-
->>>>>>> c6d297a (Corriger le problème d'authentification)
       user.getPassword(),
       authorities);
   }
   @Override
-<<<<<<< HEAD
-  public String getUsername(){
-    return username;
-  }
 
-  @Override
-  public boolean isAccountNonExpired() {
-    return true;
-  }
-  public Long getId() {
-    return id;
-  }
-=======
   public Collection<? extends GrantedAuthority> getAuthorities() {
     return authorities;
   }
@@ -96,36 +58,21 @@ public class MyUserDetails implements UserDetails {
   public boolean isAccountNonExpired() {
     return true;
   }
->>>>>>> c6d297a (Corriger le problème d'authentification)
+
   @Override
   public boolean isAccountNonLocked() {
     return true;
   }
-<<<<<<< HEAD
 
-=======
->>>>>>> c6d297a (Corriger le problème d'authentification)
+
   @Override
   public boolean isCredentialsNonExpired() {
     return true;
   }
-<<<<<<< HEAD
 
-  @Override
-  public Collection<? extends GrantedAuthority> getAuthorities() {
-    return authorities;
-  }
-
-  @Override
-  public String getPassword(){
-    return password;
-  }
-  @Override
-  public boolean isEnabled(){
-=======
   @Override
   public boolean isEnabled() {
->>>>>>> c6d297a (Corriger le problème d'authentification)
+
     return true;
   }
   @Override
@@ -134,7 +81,7 @@ public class MyUserDetails implements UserDetails {
       return true;
     if (o == null || getClass() != o.getClass())
       return false;
-    MyUserDetails user = (MyUserDetails) o;
+    UserDetails user = (UserDetails) o;
     return Objects.equals(id, user.id);
   }
 }

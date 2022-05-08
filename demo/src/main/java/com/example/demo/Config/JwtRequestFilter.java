@@ -1,10 +1,6 @@
 package com.example.demo.Config;
 
-<<<<<<< HEAD
-import com.example.demo.Services.MyUserDetailsService;
-=======
-import com.example.demo.Services.MyUserDetailsServiceImpl;
->>>>>>> c6d297a (Corriger le problème d'authentification)
+import com.example.demo.Services.UserDetailsServiceImpl;
 import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 import javax.servlet.FilterChain;
@@ -25,11 +21,9 @@ public class JwtRequestFilter extends OncePerRequestFilter {
   private JwtTokenUtil jwtUtils;
 
   @Autowired
-<<<<<<< HEAD
-  private MyUserDetailsService userDetailsService;
-=======
-  private MyUserDetailsServiceImpl userDetailsService;
->>>>>>> c6d297a (Corriger le problème d'authentification)
+
+  private UserDetailsServiceImpl userDetailsService;
+
 
   private static final Logger logger = LoggerFactory.getLogger(JwtRequestFilter.class);
 

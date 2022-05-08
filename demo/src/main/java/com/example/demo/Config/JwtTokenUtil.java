@@ -1,11 +1,10 @@
 package com.example.demo.Config;
 import java.util.Date;
 
-import com.example.demo.Services.MyUserDetails;
+import com.example.demo.Services.UserDetails;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
@@ -23,7 +22,7 @@ public class JwtTokenUtil {
 
   public String generateJwtToken(Authentication authentication) {
 
-    MyUserDetails userPrincipal = (MyUserDetails) authentication.getPrincipal();
+    UserDetails userPrincipal = (UserDetails) authentication.getPrincipal();
 
     return Jwts.builder()
       .setSubject((userPrincipal.getUsername()))
