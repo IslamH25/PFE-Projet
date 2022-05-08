@@ -1,6 +1,10 @@
 package com.example.demo.Config;
 
+<<<<<<< HEAD
 import com.example.demo.Services.MyUserDetailsService;
+=======
+import com.example.demo.Services.MyUserDetailsServiceImpl;
+>>>>>>> c6d297a (Corriger le problème d'authentification)
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +15,10 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+<<<<<<< HEAD
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+=======
+>>>>>>> c6d297a (Corriger le problème d'authentification)
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -19,9 +26,22 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   @Autowired
+<<<<<<< HEAD
   MyUserDetailsService userDetailsService;
   @Autowired
   private JwtAuthentificationEntryPoint unauthorizedHandler;
+=======
+  MyUserDetailsServiceImpl userDetailsService;
+  @Autowired
+  private JwtAuthentificationEntryPoint unauthorizedHandler;
+
+  @Override
+  public void configure(AuthenticationManagerBuilder auth) throws Exception {
+    auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
+
+  }
+
+>>>>>>> c6d297a (Corriger le problème d'authentification)
   @Bean
   @Override
   public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -32,6 +52,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   public JwtRequestFilter authenticationJwtTokenFilter() {
     return new JwtRequestFilter();
   }
+<<<<<<< HEAD
+=======
+
+  @Bean
+  public PasswordEncoder passwordEncoder() {
+    return new BCryptPasswordEncoder();
+  }
+
+>>>>>>> c6d297a (Corriger le problème d'authentification)
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http.cors().and().csrf().disable()
@@ -42,6 +71,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
   }
 
+<<<<<<< HEAD
   @Override
   public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
     authenticationManagerBuilder.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
@@ -50,3 +80,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   public PasswordEncoder passwordEncoder() {
     return new BCryptPasswordEncoder();
   }}
+=======
+
+
+
+}
+>>>>>>> c6d297a (Corriger le problème d'authentification)

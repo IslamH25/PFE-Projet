@@ -16,6 +16,7 @@ public class MyUserDetails implements UserDetails {
   private static final long serialVersionUID = 1L;
   private Long id;
   private String username;
+<<<<<<< HEAD
   @JsonIgnore
   private String password;
   private Collection<? extends GrantedAuthority> authorities;
@@ -34,16 +35,36 @@ public class MyUserDetails implements UserDetails {
 
   public static MyUserDetails build(User user) {
 
+=======
+
+  @JsonIgnore
+  private String password;
+  private Collection<? extends GrantedAuthority> authorities;
+  public MyUserDetails(Long id, String username,  String password,
+                         Collection<? extends GrantedAuthority> authorities) {
+    this.id = id;
+    this.username = username;
+
+    this.password = password;
+    this.authorities = authorities;
+  }
+  public static MyUserDetails build(User user) {
+>>>>>>> c6d297a (Corriger le problème d'authentification)
     List<GrantedAuthority> authorities = user.getRoles().stream()
       .map(role -> new SimpleGrantedAuthority(role.getName().name()))
       .collect(Collectors.toList());
     return new MyUserDetails(
       user.getId(),
       user.getUsername(),
+<<<<<<< HEAD
+=======
+
+>>>>>>> c6d297a (Corriger le problème d'authentification)
       user.getPassword(),
       authorities);
   }
   @Override
+<<<<<<< HEAD
   public String getUsername(){
     return username;
   }
@@ -55,15 +76,40 @@ public class MyUserDetails implements UserDetails {
   public Long getId() {
     return id;
   }
+=======
+  public Collection<? extends GrantedAuthority> getAuthorities() {
+    return authorities;
+  }
+  public Long getId() {
+    return id;
+  }
+
+  @Override
+  public String getPassword() {
+    return password;
+  }
+  @Override
+  public String getUsername() {
+    return username;
+  }
+  @Override
+  public boolean isAccountNonExpired() {
+    return true;
+  }
+>>>>>>> c6d297a (Corriger le problème d'authentification)
   @Override
   public boolean isAccountNonLocked() {
     return true;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> c6d297a (Corriger le problème d'authentification)
   @Override
   public boolean isCredentialsNonExpired() {
     return true;
   }
+<<<<<<< HEAD
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -76,6 +122,10 @@ public class MyUserDetails implements UserDetails {
   }
   @Override
   public boolean isEnabled(){
+=======
+  @Override
+  public boolean isEnabled() {
+>>>>>>> c6d297a (Corriger le problème d'authentification)
     return true;
   }
   @Override
