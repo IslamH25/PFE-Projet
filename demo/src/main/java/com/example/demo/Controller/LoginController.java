@@ -1,6 +1,4 @@
 package com.example.demo.Controller;
-
-
 import com.example.demo.Config.JwtTokenUtil;
 import com.example.demo.Model.ERole;
 import com.example.demo.Model.Roles;
@@ -30,7 +28,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
 public class LoginController {
@@ -72,13 +70,14 @@ public class LoginController {
   public ResponseEntity<?> signUpUSer(@Valid @RequestBody Map<String,String> signUpRequest) {
     BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
     User user = new User();
-    user.setId(2L);
+    user.setId(3L);
     user.setUsername(signUpRequest.get("username"));
     String pass = passwordEncoder.encode(signUpRequest.get("password"));
     user.setPassword(pass);
     Set<Roles> roles = new HashSet<Roles>() ;
     Roles role = new Roles();
     role.setName(ERole.ROLE_ADMIN);
+    role.setId(3L);
     roles.add(role);
     user.setRoles(roles);
     userService.saveUser(user);

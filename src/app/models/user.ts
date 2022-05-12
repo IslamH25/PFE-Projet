@@ -2,8 +2,9 @@ export class User {
 
   id!: number;
   username!: string;
-  role!: string;
+  roles!: any[];
   password! : string;
+  role !: string;
   jwt! : string;
 
 }

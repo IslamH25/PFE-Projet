@@ -9,15 +9,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
+import { UserListComponent } from './user-list/user-list.component';
 
 import { RegisterComponent } from './register/register.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UserListComponent,
+    AddUserComponent,
+    UpdateUserComponent
 
   ],
   imports: [
