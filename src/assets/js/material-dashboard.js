@@ -30,6 +30,11 @@
 if (document.getElementById('navbarBlur')) {
   navbarBlurOnScroll('navbarBlur');
 }
+$(document).ready(function () {
+  $('#sidebarCollapse').on('click', function () {
+      $('#sidebar').toggleClass('active');
+  });
+});
 
 // initialization of Tooltips
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))

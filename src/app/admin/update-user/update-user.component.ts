@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -23,6 +22,7 @@ export class UpdateUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.id=this.route.snapshot.params['id'];
+    console.log(this.id)
     this.userService.getUserById(this.id).subscribe(data=>{
       console.log(data)
       this.user=data;

@@ -1,9 +1,6 @@
 package com.example.demo.Controller;
 
-import com.example.demo.Model.Fabricant;
 import com.example.demo.Model.Produit;
-import com.example.demo.Model.ProduitId;
-import com.example.demo.Repository.FabricantRepository;
 import com.example.demo.Repository.ProduitRepository;
 import com.example.demo.domaine.RessourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +23,11 @@ public class ProduitController {
 
   @GetMapping("/produits")
   public List<Produit> getAllProduits(){
+    System.out.println(produitRepository.findById(556L));
     return produitRepository.findAll();
   }
   @GetMapping("/produits/{id}")
-  public ResponseEntity<Produit> getProduitById(@PathVariable(value = "id") ProduitId ProduitId){
+  public ResponseEntity<Produit> getProduitById(@PathVariable(value = "id") Long ProduitId){
     Produit produit = produitRepository.findById(ProduitId)
       .orElseThrow(() -> new RessourceNotFoundException("Produit not found for this id :: " + ProduitId));
     return ResponseEntity.ok().body(produit);
@@ -41,7 +39,7 @@ public class ProduitController {
 
 
   @DeleteMapping("/produits/{id}")
-  public Map<String, Boolean> DeleteProduit(@PathVariable(value = "id") ProduitId ProduitId)
+  public Map<String, Boolean> DeleteProduit(@PathVariable(value = "id") Long ProduitId)
     throws RessourceNotFoundException {
     Produit produit = produitRepository.findById(ProduitId)
       .orElseThrow(() -> new RessourceNotFoundException("Produit not found  id :: " + ProduitId));
@@ -63,7 +61,7 @@ public class ProduitController {
 
 
   @PutMapping("/produits/{id}")
-  public ResponseEntity<Produit> updateProduit(@PathVariable("id") ProduitId id, @RequestBody Produit produit) {
+  public ResponseEntity<Produit> updateProduit(@PathVariable("id") Long id, @RequestBody Produit produit) {
 
 
     Optional<Produit> produitInfo = produitRepository.findById(id);

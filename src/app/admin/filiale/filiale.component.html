@@ -1,0 +1,25 @@
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Section</th>
+      <th scope="col">services</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let filiale of filiales">
+      <th scope="row">{{filiale.id}}</th>
+      <td>{{filiale.name}}</td>
+      <td>{{filiale.desc}}</td>
+      <td>{{filiale.sect}}</td>
+      <td>{{filiale.services[0].nom}}</td>
+      <td>
+        <button (click)="updateFiliale(filiale.id)" class="btn btn-info">Update</button>
+        <button (click)="deleteFiliale (filiale.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

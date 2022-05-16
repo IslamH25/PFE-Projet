@@ -35,17 +35,15 @@
 
               "src/assets/css/nucleo-icons.css",
               "src/assets/css/nucleo-svg.css",
-              "src/assets/css/material-dashboard.css"
+             "src/assets/css/material-dashboard.css"
 
 
 
             ],
             "scripts": [
-            "src/assets/js/core/bootstrap.bundle.min.js",
-            "src/assets/js/core/bootstrap.min.js",
-            "src/assets/js/core/popper.min.js",
 
-            "src/assets/js/material-dashboard.min.js"
+            "node_modules/jquery/dist/jquery.min.js",
+            "src/assets/js/core/popper.min.js"
             ]
           },
           "configurations": {

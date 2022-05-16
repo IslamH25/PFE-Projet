@@ -32,7 +32,6 @@ public class Famille {
   @Column(name = "desc_famille")
   private String desc_famille;
 
-  @OneToMany(mappedBy = "idFamille")
-  private Set<Produit> produits = new LinkedHashSet<>();
+
 
 }

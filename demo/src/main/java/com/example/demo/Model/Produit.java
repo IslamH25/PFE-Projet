@@ -14,10 +14,12 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name = "\"Produit\"")
+@Table(name = "produit")
 public class Produit {
-  @EmbeddedId
-  private ProduitId id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Ref_piece", nullable = false)
+    private Long ref_piece;
 
   @Column(name = "consom_annee")
   private Long consomAnnee;

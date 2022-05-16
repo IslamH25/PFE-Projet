@@ -32,7 +32,7 @@ public class Filiale {
 
   @NotBlank
   @Size(max = 20)
-  @Column(name = "sect_fil")
+  @Column(name = "sect_act")
   private String sect_fil;
 
   @OneToMany(mappedBy = "idFiliale")

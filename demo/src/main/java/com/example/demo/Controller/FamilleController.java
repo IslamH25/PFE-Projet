@@ -25,6 +25,7 @@ public class FamilleController {
 
   @GetMapping("/familles")
   public List<Famille> getAllFamille(){
+    System.out.println(familleRepository.findAll());
     return familleRepository.findAll();
   }
   @GetMapping("/familles/{id}")
@@ -72,7 +73,7 @@ public class FamilleController {
       Famille famille1 = familleInfo.get();
       famille1.setDesc_famille(famille.getDesc_famille());
       famille1.setNom_famille(famille.getNom_famille());
-      famille1.setProduits(famille.getProduits());
+
 
       return new ResponseEntity<>(familleRepository.save(famille1), HttpStatus.OK);
     } else {

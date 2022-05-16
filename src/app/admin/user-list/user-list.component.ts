@@ -26,7 +26,7 @@ export class UserListComponent implements OnInit {
     )
   }
   updateUser(id:number){
-    this.router.navigate(['update-users',id])
+    this.router.navigate(['/dashboard','update-users',`${id}`])
   }
   deleteUser(id:number){
     this.userService.deleteUser(id).subscribe(data=>{

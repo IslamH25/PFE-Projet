@@ -11,20 +11,12 @@ import { AppComponent } from './app.component';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 
 
-
-
-import { UpdateUserComponent } from './admin/update-user/update-user.component';
 import { AdminModule } from './admin/admin.module';
 
 
 @NgModule({
   declarations: [
     AppComponent
-
-
-
-
-
   ],
   imports: [
     BrowserModule,
