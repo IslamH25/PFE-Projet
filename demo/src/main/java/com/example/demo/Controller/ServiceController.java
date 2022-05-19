@@ -70,7 +70,6 @@ public class ServiceController {
     if (serviceInfo.isPresent()) {
        Service service1= serviceInfo.get();
       service1.setDesignation_serv(service.getDesignation_serv());
-      service1.setFiliales(service.getFiliales());
       service1.setNom_serv(service.getNom_serv());
 
 

@@ -11,7 +11,6 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Entity
 @Table(name = "service")
 public class Service {
@@ -31,12 +30,36 @@ public class Service {
   @Column(name = "designation_serv")
   private String designation_serv;
 
-  @ManyToMany
-  @JoinTable(name = "filiale_service",
-    joinColumns = @JoinColumn(name = "id_serv"),
-    inverseJoinColumns = @JoinColumn(name = "id_fil"))
-  private Set<Filiale> filiales = new LinkedHashSet<>();
+  public Long getId() {
+    return id;
+  }
 
+  public void setId(Long id) {
+    this.id = id;
+  }
 
+  public String getNom_serv() {
+    return nom_serv;
+  }
 
+  public void setNom_serv(String nom_serv) {
+    this.nom_serv = nom_serv;
+  }
+
+  public String getDesignation_serv() {
+    return designation_serv;
+  }
+
+  public void setDesignation_serv(String designation_serv) {
+    this.designation_serv = designation_serv;
+  }
+
+  @Override
+  public String toString() {
+    return "Service{" +
+      "id=" + id +
+      ", nom_serv='" + nom_serv + '\'' +
+      ", designation_serv='" + designation_serv + '\'' +
+      '}';
+  }
 }

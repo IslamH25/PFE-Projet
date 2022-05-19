@@ -11,7 +11,6 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Entity
 @Table(name = "filiale")
 public class Filiale {
@@ -35,15 +34,45 @@ public class Filiale {
   @Column(name = "sect_act")
   private String sect_fil;
 
-  @OneToMany(mappedBy = "idFiliale")
-  private Set<Produit> produits = new LinkedHashSet<>();
+  public Long getId() {
+    return id;
+  }
 
-  @ManyToMany
-  @JoinTable(name = "filiale_service",
-    joinColumns = @JoinColumn(name = "id_fil"),
-    inverseJoinColumns = @JoinColumn(name = "id_serv"))
-  private Set<Service> services = new LinkedHashSet<>();
+  public void setId(Long id) {
+    this.id = id;
+  }
 
+  public String getNom_fil() {
+    return nom_fil;
+  }
 
+  public void setNom_fil(String nom_fil) {
+    this.nom_fil = nom_fil;
+  }
 
+  public String getDesc_fil() {
+    return desc_fil;
+  }
+
+  public void setDesc_fil(String desc_fil) {
+    this.desc_fil = desc_fil;
+  }
+
+  public String getSect_fil() {
+    return sect_fil;
+  }
+
+  public void setSect_fil(String sect_fil) {
+    this.sect_fil = sect_fil;
+  }
+
+  @Override
+  public String toString() {
+    return "Filiale{" +
+      "id=" + id +
+      ", nom_fil='" + nom_fil + '\'' +
+      ", desc_fil='" + desc_fil + '\'' +
+      ", sect_fil='" + sect_fil + '\'' +
+      '}';
+  }
 }

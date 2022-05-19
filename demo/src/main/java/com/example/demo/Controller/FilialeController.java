@@ -73,7 +73,6 @@ public class FilialeController {
       Filiale filiale1 = filialeInfo.get();
       filiale1.setDesc_fil(filiale.getDesc_fil());
       filiale1.setNom_fil(filiale.getNom_fil());
-      filiale1.setProduits(filiale.getProduits());
       return new ResponseEntity<>(filialeRepository.save(filiale1), HttpStatus.OK);
     } else {
       return new ResponseEntity<>(HttpStatus.NOT_FOUND);

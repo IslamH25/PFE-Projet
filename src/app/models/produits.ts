@@ -4,9 +4,5 @@ export class Produit{
   prix!:string;
   observation!:string;
   designation!:string;
-  idFam!:number;
-  idFil!:number;
-  fournisseur!:any[];
-  fabricants!:any[];
 
 }

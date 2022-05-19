@@ -4,7 +4,6 @@
       <th scope="col">Id</th>
       <th scope="col">Name</th>
       <th scope="col">Designation</th>
-      <th scope="col">Filiale</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -13,7 +12,6 @@
       <th scope="row">{{service.id}}</th>
       <td>{{service.nom}}</td>
       <td>{{service.designation}}</td>
-      <td>{{service.filiale[0].name}}</td>
       <td>
         <button (click)="updateService(service.id)" class="btn btn-info">Update</button>
         <button (click)="deleteService (service.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>

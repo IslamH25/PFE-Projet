@@ -22,7 +22,7 @@ export class FournisseurListComponent implements OnInit {
   private getFournisseurs(){
     this.fournisseurService.getFournisseurList().subscribe(
       data=>{this.fournisseurs=data;
-      console.log(data)}
+      console.log(this.fournisseurs[0].name)}
     )
   }
   updateFournisseur(id:number){

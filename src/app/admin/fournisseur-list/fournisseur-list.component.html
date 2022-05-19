@@ -3,7 +3,6 @@
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Name</th>
-      <th scope="col">Produit</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -11,7 +10,6 @@
     <tr *ngFor="let fournisseur of fournisseurs">
       <th scope="row">{{fournisseur.id}}</th>
       <td>{{fournisseur.name}}</td>
-      <td>{{fournisseur.produit[0].designation}}</td>
       <td>
         <button (click)="updateFournisseur(fournisseur.id)" class="btn btn-info">Update</button>
         <button (click)="deleteFournisseur(fournisseur.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>

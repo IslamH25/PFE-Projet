@@ -1,17 +1,13 @@
 package com.example.demo.Model;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.util.LinkedHashSet;
-import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Entity
 @Table(name = "fournisseur")
 public class Fournisseur {
@@ -25,11 +21,27 @@ public class Fournisseur {
   @Column(name = "nom_four")
   private String nom_four;
 
-  @ManyToMany
-  @JoinTable(name = "produit_fournisseur",
-    joinColumns = @JoinColumn(name = "id_four"),
-    inverseJoinColumns = @JoinColumn(name = "Ref_piece"))
-  private Set<Produit> produits = new LinkedHashSet<>();
+  public Long getId() {
+    return id;
+  }
 
+  public String getNom_four() {
+    return nom_four;
+  }
 
+  public void setNom_four(String nom_four) {
+    this.nom_four = nom_four;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  @Override
+  public String toString() {
+    return "Fournisseur{" +
+      "id=" + id +
+      ", nom_four='" + nom_four + '\'' +
+      '}';
+  }
 }

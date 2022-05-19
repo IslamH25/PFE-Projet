@@ -70,7 +70,6 @@ public class FabricantController {
       Fabricant fabricant1 = fabricantInfo.get();
       fabricant1.setNom_fab(fabricant.getNom_fab());
       fabricant1.setType_fab(fabricant.getType_fab());
-      fabricant1.setProduits(fabricant.getProduits());
 
       return new ResponseEntity<>(fabricantRepository.save(fabricant1), HttpStatus.OK);
     } else {

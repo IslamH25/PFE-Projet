@@ -10,7 +10,7 @@ import { FamilleService } from 'src/app/services/famille.service';
 })
 export class FamilleComponent implements OnInit {
 
-  familles!:Famille[];
+  familles!:any[];
 
   constructor(private familleService:FamilleService, private router:Router) {
 

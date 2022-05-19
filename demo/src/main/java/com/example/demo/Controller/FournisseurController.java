@@ -71,7 +71,6 @@ public class FournisseurController {
     if (fournisseurInfo.isPresent()) {
       Fournisseur fournisseur1 = fournisseurInfo.get();
       fournisseur1.setNom_four(fournisseur.getNom_four());
-      fournisseur1.setProduits(fournisseur.getProduits());
 
       return new ResponseEntity<>(fournisseurRepository.save(fournisseur1), HttpStatus.OK);
     } else {

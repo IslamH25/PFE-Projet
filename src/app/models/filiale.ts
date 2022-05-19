@@ -3,5 +3,4 @@ export class Filiale{
   name!:string;
   desc!:string;
   sect!:string;
-  services!:any[];
 }

@@ -4,7 +4,6 @@
       <th scope="col">Id</th>
       <th scope="col">Name</th>
       <th scope="col">Type</th>
-      <th scope="col">Produit</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -13,7 +12,6 @@
       <th scope="row">{{fabricant.id}}</th>
       <td>{{fabricant.nom}}</td>
       <td>{{fabricant.type}}</td>
-      <td>{{fabricant.produit[0].designation}}</td>
       <td>
         <button (click)="updateFabricant(fabricant.id)" class="btn btn-info">Update</button>
         <button (click)="deleteFabricant(fabricant.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>

@@ -6,10 +6,6 @@
       <th scope="col">Observation</th>
       <th scope="col">Prix</th>
       <th scope="col">ConsomAnnee</th>
-      <th scope="col">Famille</th>
-      <th scope="col">Filiale</th>
-      <th scope="col">Fabricant</th>
-      <th scope="col">Fournisseur</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -21,10 +17,6 @@
       <td>{{produit.observation}}</td>
       <td>{{produit.prix}}</td>
       <td>{{produit.consomAnnee}}</td>
-      <td>{{produit.idFam}}</td>
-      <td>{{produit.idFil}}</td>
-      <td>{{produit.fabricants[0].nom}}</td>
-      <td>{{produit.fournisseur[0].name}}</td>
       <td>
         <button (click)="updateProduit(produit.ref)" class="btn btn-info">Update</button>
         <button (click)="deleteProduit(produit.ref)" class="btn btn-danger" style="margin-left:10px">Delete</button>

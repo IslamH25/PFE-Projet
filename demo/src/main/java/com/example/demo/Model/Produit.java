@@ -13,12 +13,11 @@ import java.util.Set;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Table(name = "produit")
 public class Produit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Ref_piece", nullable = false)
+    @Column(name = "ref_piece", nullable = false)
     private Long ref_piece;
 
   @Column(name = "consom_annee")
@@ -39,25 +38,58 @@ public class Produit {
   @Column(name = "designation")
   private String designation;
 
-  @ManyToOne(fetch = FetchType.LAZY, optional = false)
-  @JoinColumn(name = "id_famille", nullable = false)
-  private Famille idFamille;
 
-  @ManyToOne(fetch = FetchType.LAZY, optional = false)
-  @JoinColumn(name = "id_filiale", nullable = false)
-  private Filiale idFiliale;
+  public Long getRef_piece() {
+    return ref_piece;
+  }
 
-  @ManyToMany
-  @JoinTable(name = "produit_fournisseur",
-    joinColumns = @JoinColumn(name = "Ref_piece"),
-    inverseJoinColumns = @JoinColumn(name = "id_four"))
-  private Set<Fournisseur> fournisseurs = new LinkedHashSet<>();
+  public void setRef_piece(Long ref_piece) {
+    this.ref_piece = ref_piece;
+  }
 
-  @ManyToMany
-  @JoinTable(name = "produit_fabricant",
-    joinColumns = @JoinColumn(name = "Ref_piece"),
-    inverseJoinColumns = @JoinColumn(name = "id_fab"))
-  private Set<Fabricant> fabricants = new LinkedHashSet<>();
+  public Long getConsomAnnee() {
+    return consomAnnee;
+  }
+
+  public void setConsomAnnee(Long consomAnnee) {
+    this.consomAnnee = consomAnnee;
+  }
+
+  public String getPrix() {
+    return prix;
+  }
+
+  public void setPrix(String prix) {
+    this.prix = prix;
+  }
+
+  public String getObservation() {
+    return observation;
+  }
+
+  public String getDesignation() {
+    return designation;
+  }
+
+  public void setDesignation(String designation) {
+    this.designation = designation;
+  }
+
+  public void setObservation(String observation) {
+    this.observation = observation;
+  }
 
 
+
+  @Override
+  public String toString() {
+    return "Produit{" +
+      "ref_piece=" + ref_piece +
+      ", consomAnnee=" + consomAnnee +
+      ", prix='" + prix + '\'' +
+      ", observation='" + observation + '\'' +
+      ", designation='" + designation +
+
+      '}';
+  }
 }

@@ -23,7 +23,6 @@ public class ProduitController {
 
   @GetMapping("/produits")
   public List<Produit> getAllProduits(){
-    System.out.println(produitRepository.findById(556L));
     return produitRepository.findAll();
   }
   @GetMapping("/produits/{id}")
@@ -70,8 +69,6 @@ public class ProduitController {
       Produit produit1 =produitInfo.get();
       produit1.setConsomAnnee(produit.getConsomAnnee());
       produit1.setDesignation(produit.getDesignation());
-      produit1.setFabricants(produit.getFabricants());
-      produit1.setFournisseurs(produit.getFournisseurs());
       produit1.setPrix(produit.getPrix());
       produit1.setObservation(produit.getObservation());
 

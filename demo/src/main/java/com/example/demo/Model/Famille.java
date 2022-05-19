@@ -11,7 +11,6 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Entity
 @Table(name = "famille")
 public class Famille {
@@ -32,6 +31,27 @@ public class Famille {
   @Column(name = "desc_famille")
   private String desc_famille;
 
+  public Long getId() {
+    return id;
+  }
 
+  public void setId(Long id) {
+    this.id = id;
+  }
 
+  public String getNom_famille() {
+    return nom_famille;
+  }
+
+  public void setNom_famille(String nom_famille) {
+    this.nom_famille = nom_famille;
+  }
+
+  public String getDesc_famille() {
+    return desc_famille;
+  }
+
+  public void setDesc_famille(String desc_famille) {
+    this.desc_famille = desc_famille;
+  }
 }

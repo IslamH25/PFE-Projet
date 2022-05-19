@@ -11,7 +11,6 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Entity
 @Table(name = "fabricant")
 public class Fabricant {
@@ -30,10 +29,36 @@ public class Fabricant {
   @Column(name = "type_fab")
   private String type_fab;
 
-  @ManyToMany
-  @JoinTable(name = "produit_fabricant",
-    joinColumns = @JoinColumn(name = "id_fab"),
-    inverseJoinColumns = @JoinColumn(name = "Ref_piece"))
-  private Set<Produit> produits = new LinkedHashSet<>();
+  public Long getId() {
+    return id;
+  }
 
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public String getNom_fab() {
+    return nom_fab;
+  }
+
+  public void setNom_fab(String nom_fab) {
+    this.nom_fab = nom_fab;
+  }
+
+  public String getType_fab() {
+    return type_fab;
+  }
+
+  public void setType_fab(String type_fab) {
+    this.type_fab = type_fab;
+  }
+
+  @Override
+  public String toString() {
+    return "Fabricant{" +
+      "id=" + id +
+      ", nom_fab='" + nom_fab + '\'' +
+      ", type_fab='" + type_fab + '\'' +
+      '}';
+  }
 }
