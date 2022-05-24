@@ -11,6 +11,7 @@ export class FabricantService {
   listData !: Fabricant[];
   constructor( private http:HttpClient) { }
   private baseUrl="http://localhost:8080/api/"
+
   getFabricantList(): Observable<Fabricant[]>{
     return this.http.get<Fabricant[]>(`${this.baseUrl}`+'fabricants')
   }

@@ -35,15 +35,19 @@
 
               "src/assets/css/nucleo-icons.css",
               "src/assets/css/nucleo-svg.css",
-             "src/assets/css/material-dashboard.css"
+              "src/assets/css/material-dashboard.css"
 
 
 
             ],
             "scripts": [
-
-            "node_modules/jquery/dist/jquery.min.js",
-            "src/assets/js/core/popper.min.js"
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/core/popper.min.js",
+              "src/assets/js/core/sb-admin-2.js",
+              "src/assets/js/core/pagination.js",
+              "src/assets/js/core/jquerrypag.js",
+              "src/assets/js/core/jquerrypag2.js",
+              "src/assets/js/core/jquerrypag3.js"
             ]
           },
           "configurations": {

@@ -1,30 +1,48 @@
-<table class="table table-hover table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Ref</th>
-      <th scope="col">Designation</th>
-      <th scope="col">Observation</th>
-      <th scope="col">Prix</th>
-      <th scope="col">ConsomAnnee</th>
-      <th scope="col">Fabricant</th>
-      <th scope="col">Fournisseur</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <tr *ngFor="let produit of produits" >
-      <th scope="row">{{produit.ref_piece}}</th>
-      <td>{{produit.designation}}</td>
-      <td>{{produit.observation}}</td>
-      <td>{{produit.prix}}</td>
-      <td>{{produit.consomAnnee}}</td>
-      <td>{{produit.fabricants[0].nom_fab}}</td>
-      <td>{{produit.fournisseurs[0].nom_four}}</td>
-      <td>
-        <button (click)="updateProduit(produit.ref_piece)" class="btn btn-info">Update</button>
-        <button (click)="deleteProduit(produit.ref_piece)" class="btn btn-danger" style="margin-left:10px">Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+
+                    <div  class="card shadow mb-4" style="margin-top:13%;">
+                      <div class="card-header py-3">
+                          <h6 class="m-0 font-weight-bold text-primary">Produit List</h6>
+                      </div>
+
+                      <div class="card-body">
+                          <div class="table-responsive">
+                              <table id="myTable" class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">Ref</th>
+                                      <th scope="col">Designation</th>
+                                      <th scope="col">Observation</th>
+                                      <th scope="col">Prix</th>
+                                      <th scope="col">ConsomAnnee</th>
+                                      <th scope="col">Fabricant</th>
+                                      <th scope="col">Fournisseur</th>
+                                      <th scope="col">Actions</th>
+                                    </tr>
+                                  </thead>
+
+                                  <tbody>
+                                    <tr *ngFor="let produit of produits ">
+                                      <th>{{produit.ref_piece}}</th>
+                                      <td>{{produit.designation}}</td>
+                                      <td>{{produit.observation}}</td>
+                                      <td>{{produit.prix}}</td>
+                                      <td>{{produit.consomAnnee}}</td>
+                                      <td>{{produit.fabricants[0].nom_fab}}</td>
+                                      <td>{{produit.fournisseurs[0].nom_four}}</td>
+                                      <td>
+                                        <a href="#editProduitModal" (click)="updateProduit(produit.id)" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                        <a href="#deleteProduitModal" (click)="deleteProduit(produit.id)" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                            </div>
+                        </div>
+                      </div>
+
+
+  <a class="scroll-to-top rounded" href="http://localhost:4200/dashboard/produitList" style="scroll-behavior:smooth !important;">
+    <i class="fas fa-angle-up"></i>
+  </a>
+

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Fournisseur } from 'src/app/models/fournisseur';
 import { FournisseurService } from 'src/app/services/fournisseur.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-fournisseur-list',
@@ -12,12 +13,19 @@ export class FournisseurListComponent implements OnInit {
 
   fournisseurs!:any[];
 
-  constructor(private fournisseurService:FournisseurService, private router:Router) {
+  constructor(private fournisseurService:FournisseurService, private tokenStorage: TokenStorageService, private router:Router) {
 
   }
-
+  isLoggedIn = false;
+  roles!:any[]
   ngOnInit(): void {
     this.getFournisseurs();
+    this.isLoggedIn = !!this.tokenStorage.getToken();
+    if (this.isLoggedIn) {
+      const user = this.tokenStorage.getUser();
+      this.roles=user.roles
+      console.log(this.roles)
+    }
   }
   private getFournisseurs(){
     this.fournisseurService.getFournisseurList().subscribe(

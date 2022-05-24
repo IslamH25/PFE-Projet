@@ -28,7 +28,6 @@ public class Fabricant {
   @Size(max = 20)
   @Column(name = "type_fab")
   private String type_fab;
-
   public Long getId() {
     return id;
   }

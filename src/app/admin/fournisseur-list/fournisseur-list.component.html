@@ -1,4 +1,5 @@
-<table class="table table-hover table-dark">
+
+<table class="table table-striped table-hover" style="margin-top:13%;">
   <thead>
     <tr>
       <th scope="col">Id</th>
@@ -11,8 +12,8 @@
       <th scope="row">{{fournisseur.id}}</th>
       <td>{{fournisseur.nom_four}}</td>
       <td>
-        <button (click)="updateFournisseur(fournisseur.id)" class="btn btn-info">Update</button>
-        <button (click)="deleteFournisseur(fournisseur.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>
+        <a *ngIf="roles[0]==='ROLE_ADMIN'" href="#editFournisseurModal" (click)="updateFournisseur(fournisseur.id)" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+        <a *ngIf="roles[0]==='ROLE_ADMIN'" href="#deleteFournisseurModal" (click)="deleteFournisseur(fournisseur.id)" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
       </td>
     </tr>
   </tbody>

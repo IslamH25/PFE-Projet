@@ -1,4 +1,5 @@
-<table class="table table-hover table-dark">
+
+<table class="table table-striped table-hover" style="margin-top:13%;">
   <thead>
     <tr>
       <th scope="col">Id</th>
@@ -14,11 +15,11 @@
       <th scope="row">{{filiale.id}}</th>
       <td>{{filiale.nom_fil}}</td>
       <td>{{filiale.desc_fil}}</td>
-      <td>{{filiale.desc_fil}}</td>
+      <td>{{filiale.sect_fil}}</td>
       <td>{{filiale.service[0].nom_serv}}</td>
       <td>
-        <button (click)="updateFiliale(filiale.id)" class="btn btn-info">Update</button>
-        <button (click)="deleteFiliale (filiale.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>
+        <a *ngIf="roles[0]==='ROLE_ADMIN'" href="#editFilialeModal" (click)="updateFiliale(filiale.id)" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+        <a *ngIf="roles[0]==='ROLE_ADMIN'" href="#deleteFilialeModal" (click)="deleteFiliale(filiale.id)" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
       </td>
     </tr>
   </tbody>

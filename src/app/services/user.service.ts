@@ -31,6 +31,7 @@ export class UserService {
 
 
 
+
  getUsersList(): Observable<User[]>{
    return this.http.get<User[]>(`${this.baseUrl}`+'users')
  }

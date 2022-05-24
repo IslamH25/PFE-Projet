@@ -4,4 +4,5 @@ export class Filiale{
   desc_fil!:string;
   sect_fil!:string;
   services!:any[];
+
 }

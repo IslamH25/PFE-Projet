@@ -29,4 +29,5 @@ export class ProduitService {
   updateProduit(id:number, produit:Produit):Observable<Object>{
     return this.http.put(`${this.baseUrl}`+'produits'+`/${id}`,produit)
   }
+
 }

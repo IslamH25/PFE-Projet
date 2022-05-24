@@ -1,4 +1,5 @@
-<table class="table table-hover table-dark">
+
+<table class="table table-striped table-hover" style="margin-top:13%;" >
   <thead>
     <tr>
       <th scope="col">Id</th>
@@ -15,8 +16,8 @@
       <td>{{user.password}}</td>
       <td>{{user.roles[0].name}}</td>
       <td>
-        <button (click)="updateUser(user.id)" class="btn btn-info">Update</button>
-        <button (click)="deleteUser(user.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>
+        <a href="#editUserModal" (click)="updateUser(user.id)" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+        <a href="#deleteUserModal" (click)="deleteUser(user.id)" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
       </td>
     </tr>
   </tbody>

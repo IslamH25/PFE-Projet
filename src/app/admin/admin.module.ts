@@ -27,6 +27,8 @@ import { AddFilialeComponent } from './add-filiale/add-filiale.component';
 import { AddFabricantComponent } from './add-fabricant/add-fabricant.component';
 import { AddFournisseurComponent } from './add-fournisseur/add-fournisseur.component';
 import { AddServiceComponent } from './add-service/add-service.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -62,6 +64,8 @@ import { AddServiceComponent } from './add-service/add-service.component';
     AdminRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule
+
 
   ], exports :[
 

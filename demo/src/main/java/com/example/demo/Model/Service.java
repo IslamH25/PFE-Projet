@@ -24,7 +24,6 @@ public class Service {
   @Column(name = "nom_serv")
   private String nom;
 
-
   @NotBlank
   @Size(max = 20)
   @Column(name = "designation_serv")

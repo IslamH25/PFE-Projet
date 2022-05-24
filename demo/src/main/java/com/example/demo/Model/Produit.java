@@ -66,7 +66,6 @@ public class Produit {
   public void setRef_piece(Long ref_piece) {
     this.ref_piece = ref_piece;
   }
-
   public String getConsomAnnee() {
     return consomAnnee;
   }

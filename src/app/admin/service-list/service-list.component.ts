@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Service } from 'src/app/models/service';
 import { ServiceService } from 'src/app/services/service.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-service',
@@ -13,12 +14,19 @@ export class ServiceComponent implements OnInit {
 
   services!:any[];
 
-  constructor(private serviceService:ServiceService, private router:Router) {
+  constructor(private serviceService:ServiceService,private tokenStorage: TokenStorageService, private router:Router) {
 
   }
-
+  isLoggedIn = false;
+  roles!:any[]
   ngOnInit(): void {
     this.getServices();
+    this.isLoggedIn = !!this.tokenStorage.getToken();
+    if (this.isLoggedIn) {
+      const user = this.tokenStorage.getUser();
+      this.roles=user.roles
+      console.log(this.roles)
+  }
   }
   private getServices(){
     this.serviceService.getServiceList().subscribe(
