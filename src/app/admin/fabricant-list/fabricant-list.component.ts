@@ -10,7 +10,7 @@ import { FabricantService } from 'src/app/services/fabricant.service';
 })
 export class FabricantListComponent implements OnInit {
 
-  fabricants!:Fabricant[];
+  fabricants!:any[];
 
   constructor(private fabricantService:FabricantService, private router:Router) {
 
@@ -26,7 +26,7 @@ export class FabricantListComponent implements OnInit {
     )
   }
   updateFabricant(id:number){
-    this.router.navigate(['/dashboard','update-fabricants'])
+    this.router.navigate(['/dashboard','update-fabricants',`${id}`])
   }
   deleteFabricant(id:number){
     this.fabricantService.deleteFabricant(id).subscribe(data=>{

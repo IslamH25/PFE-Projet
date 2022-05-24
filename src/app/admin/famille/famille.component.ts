@@ -26,7 +26,7 @@ export class FamilleComponent implements OnInit {
     )
   }
   updateFamille(id:number){
-    this.router.navigate(['/dashboard','update-familles'])
+    this.router.navigate(['/dashboard','update-familles',`${id}`])
   }
   deleteFamille(id:number){
     this.familleService.deleteFamille(id).subscribe(data=>{

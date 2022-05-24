@@ -1,0 +1,42 @@
+<div class="col-md-8 offset-md-3">
+  <h3>Add Produit</h3>
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+       <label>Reference du Produit</label>
+       <input type="text" class="form-control" id="ref_piece" [(ngModel)]="produit.ref_piece" name="ref_piece">
+
+    </div>
+    <div class="form-group">
+      <label>Prix du Produit</label>
+      <input type="text" class="form-control" id="prix" [(ngModel)]="produit.prix" name="prix">
+   </div>
+   <div class="form-group">
+    <label>Observation du Produit</label>
+    <input type="text" class="form-control" id="observation" [(ngModel)]="produit.observation" name="observation">
+ </div>
+ <div class="form-group">
+  <label>Designation du Produit</label>
+  <input type="text" class="form-control" id="designation" [(ngModel)]="produit.designation" name="desigantion">
+</div>
+<div class="form-group">
+  <label>Consommation par annee</label>
+  <input type="text" class="form-control" id="consomAnnee" [(ngModel)]="produit.consomAnnee" name="consomAnnee">
+</div>
+   <div class="form-group" >
+    <label>Fabricants</label>
+    <select type="text" class="form-control" id="fabricant" [(ngModel)]="produit.fabricants" name="fabricant">
+      <option *ngFor="let fabricant of fabricants" value={{fabricant.nom_fab}} >{{fabricant.nom_fab}}</option>
+    </select>
+  </div>
+  <div class="form-group" >
+    <label>Fournisseurs</label>
+    <select type="text" class="form-control" id="fournisseur" [(ngModel)]="produit.fournisseurs" name="fournisseur">
+      <option *ngFor="let fournisseur of fournisseurs" value={{fournisseur.nom_four}} >{{fournisseur.nom_four}}</option>
+    </select>
+  </div>
+
+  <button class="btn btn-success" type="submit">Submit</button>
+
+  </form>
+  </div>

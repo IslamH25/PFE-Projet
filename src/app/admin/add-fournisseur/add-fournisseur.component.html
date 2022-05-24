@@ -1,0 +1,12 @@
+<div class="col-md-8 offset-md-3">
+  <h3>Add Fournisseur</h3>
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+       <label>Nom du Fournisseur</label>
+       <input type="text" class="form-control" id="nom_four" [(ngModel)]="fournisseur.nom_four" name="nom_four">
+    </div>
+  <button class="btn btn-success" type="submit">Submit</button>
+
+  </form>
+  </div>

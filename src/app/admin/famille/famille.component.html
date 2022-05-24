@@ -10,8 +10,8 @@
   <tbody>
     <tr *ngFor="let famille of familles">
       <th scope="row">{{famille.id}}</th>
-      <td>{{famille.nom}}</td>
-      <td>{{famille.desc}}</td>
+      <td>{{famille.nom_famille}}</td>
+      <td>{{famille.desc_famille}}</td>
       <td>
         <button (click)="updateFamille(famille.id)" class="btn btn-info">Update</button>
         <button (click)="deleteFamille(famille.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>

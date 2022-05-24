@@ -25,6 +25,7 @@ public class FournisseurController {
 
   @GetMapping("/fournisseurs")
   public List<Fournisseur> getAllFournisseurs(){
+    System.out.println(fournisseurRepository.findAll());
     return fournisseurRepository.findAll();
   }
   @GetMapping("/fournisseurs/{id}")
@@ -34,8 +35,10 @@ public class FournisseurController {
     return ResponseEntity.ok().body(fournisseur);
   }
   @PostMapping("/fournisseurs")
-  public Fournisseur CreateFournisseur(@Valid @RequestBody Fournisseur fournisseur) {
-    return fournisseurRepository.save(fournisseur);
+  public void CreateFournisseur( @RequestBody Map<String,String> object ) {
+    Fournisseur fournisseur=new Fournisseur();
+    fournisseur.setNom_four(object.get("nom_four"));
+    fournisseurRepository.save(fournisseur);
   }
 
 

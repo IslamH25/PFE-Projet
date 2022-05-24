@@ -23,6 +23,7 @@ public class FabricantController {
 
   @GetMapping("/fabricants")
   public List<Fabricant> getAllFabricant(){
+    System.out.println(fabricantRepository.findAll());
     return fabricantRepository.findAll();
   }
   @GetMapping("/fabricants/{id}")
@@ -33,6 +34,7 @@ public class FabricantController {
   }
   @PostMapping("/fabricants")
   public Fabricant CreateFabricant(@Valid @RequestBody Fabricant fabricant) {
+    System.out.println(fabricant);
     return fabricantRepository.save(fabricant);
   }
 

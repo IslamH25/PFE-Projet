@@ -24,6 +24,7 @@ public class ServiceController {
 
   @GetMapping("/services")
   public List<Service> getAllServices(){
+    System.out.println(serviceRepository.findAll());
     return serviceRepository.findAll();
   }
   @GetMapping("/services/{id}")

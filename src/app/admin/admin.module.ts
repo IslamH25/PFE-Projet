@@ -15,6 +15,18 @@ import { FamilleComponent } from './famille/famille.component';
 import { FilialeComponent } from './filiale/filiale.component';
 import { ServiceComponent } from './service-list/service-list.component';
 import { ProduitListComponent } from './produit-list/produit-list.component';
+import { AddProduitComponent } from './add-produit/add-produit.component';
+import { UpdateProduitComponent } from './update-produit/update-produit.component';
+import { AddFamilleComponent } from './add-famille/add-famille.component';
+import { UpdateFournisseurComponent } from './update-fournisseur/update-fournisseur.component';
+import { UpdateFilialeComponent } from './update-filiale/update-filiale.component';
+import { UpdateServiceComponent } from './update-service/update-service.component';
+import { UpdateFamilleComponent } from './update-famille/update-famille.component';
+import { UpdateFabricantComponent } from './update-fabricant/update-fabricant.component';
+import { AddFilialeComponent } from './add-filiale/add-filiale.component';
+import { AddFabricantComponent } from './add-fabricant/add-fabricant.component';
+import { AddFournisseurComponent } from './add-fournisseur/add-fournisseur.component';
+import { AddServiceComponent } from './add-service/add-service.component';
 
 
 
@@ -31,7 +43,19 @@ import { ProduitListComponent } from './produit-list/produit-list.component';
     FamilleComponent,
     FilialeComponent,
     ServiceComponent,
-    ProduitListComponent
+    ProduitListComponent,
+    AddProduitComponent,
+    UpdateProduitComponent,
+    AddFamilleComponent,
+    UpdateFournisseurComponent,
+    UpdateFilialeComponent,
+    UpdateServiceComponent,
+    UpdateFamilleComponent,
+    UpdateFabricantComponent,
+    AddFilialeComponent,
+    AddFabricantComponent,
+    AddFournisseurComponent,
+    AddServiceComponent
   ],
   imports: [
     CommonModule,

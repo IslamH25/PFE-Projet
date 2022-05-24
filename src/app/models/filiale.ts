@@ -1,6 +1,7 @@
 export class Filiale{
   id!:number;
-  name!:string;
-  desc!:string;
-  sect!:string;
+  nom_fil!:string;
+  desc_fil!:string;
+  sect_fil!:string;
+  services!:any[];
 }

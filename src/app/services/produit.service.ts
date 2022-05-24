@@ -11,8 +11,8 @@ export class ProduitService {
   listData !: Produit[];
   constructor( private http:HttpClient) { }
   private baseUrl="http://localhost:8080/api/"
-  getProduitList(): Observable<Produit[]>{
-    return this.http.get<Produit[]>(`${this.baseUrl}`+'produits')
+  getProduitList(): Observable<any>{
+    return this.http.get(`${this.baseUrl}`+'produits')
   }
 
   createProduit(produit: Produit):Observable<Object>{

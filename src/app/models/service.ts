@@ -1,5 +1,5 @@
 export class Service{
-  id!:number;
-  nom!:string;
-  designation!:string;
+  id_serv!:number;
+  nom_serv!:string;
+  designation_serv!:string;
 }

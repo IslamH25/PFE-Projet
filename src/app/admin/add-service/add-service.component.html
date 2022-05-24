@@ -1,0 +1,17 @@
+<div class="col-md-8 offset-md-3">
+  <h3>Add Service</h3>
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+       <label>Nom du Service</label>
+       <input type="text" class="form-control" id="nom_serv" [(ngModel)]="service.nom_serv" name="nom_serv">
+
+    </div>
+    <div class="form-group">
+      <label> Desingation du service</label>
+      <input type="text" class="form-control" id="designation_serv" [(ngModel)]="service.designation_serv" name="designation_serv">
+   </div>
+  <button class="btn btn-success" type="submit">Submit</button>
+
+  </form>
+  </div>

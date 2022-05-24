@@ -1,5 +1,5 @@
 export class Famille{
   id!:number;
-  nom!:string;
-  desc!:string;
+  nom_famille!:string;
+  desc_famille!:string;
 }

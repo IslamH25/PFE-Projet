@@ -22,7 +22,7 @@ public class Fabricant {
   @NotBlank
   @Size(max = 20)
   @Column(name = "nom_fab")
-  private String nom_fab;
+  private String nom;
 
   @NotBlank
   @Size(max = 20)
@@ -38,11 +38,11 @@ public class Fabricant {
   }
 
   public String getNom_fab() {
-    return nom_fab;
+    return nom;
   }
 
   public void setNom_fab(String nom_fab) {
-    this.nom_fab = nom_fab;
+    this.nom = nom_fab;
   }
 
   public String getType_fab() {
@@ -57,7 +57,7 @@ public class Fabricant {
   public String toString() {
     return "Fabricant{" +
       "id=" + id +
-      ", nom_fab='" + nom_fab + '\'' +
+      ", nom_fab='" + nom + '\'' +
       ", type_fab='" + type_fab + '\'' +
       '}';
   }

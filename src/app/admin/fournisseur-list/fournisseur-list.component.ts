@@ -10,7 +10,7 @@ import { FournisseurService } from 'src/app/services/fournisseur.service';
 })
 export class FournisseurListComponent implements OnInit {
 
-  fournisseurs!:Fournisseur[];
+  fournisseurs!:any[];
 
   constructor(private fournisseurService:FournisseurService, private router:Router) {
 
@@ -21,12 +21,11 @@ export class FournisseurListComponent implements OnInit {
   }
   private getFournisseurs(){
     this.fournisseurService.getFournisseurList().subscribe(
-      data=>{this.fournisseurs=data;
-      console.log(this.fournisseurs[0].name)}
+      data=>{this.fournisseurs=data;}
     )
   }
   updateFournisseur(id:number){
-    this.router.navigate(['/dashboard','update-fournisseurs'])
+    this.router.navigate(['/dashboard','update-fournisseurs',`${id}`])
   }
   deleteFournisseur(id:number){
     this.fournisseurService.deleteFournisseur(id).subscribe(data=>{

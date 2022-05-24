@@ -10,8 +10,8 @@
   <tbody>
     <tr *ngFor="let service of services">
       <th scope="row">{{service.id}}</th>
-      <td>{{service.nom}}</td>
-      <td>{{service.designation}}</td>
+      <td>{{service.nom_serv}}</td>
+      <td>{{service.designation_serv}}</td>
       <td>
         <button (click)="updateService(service.id)" class="btn btn-info">Update</button>
         <button (click)="deleteService (service.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>

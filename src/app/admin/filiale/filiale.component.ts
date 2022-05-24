@@ -10,7 +10,7 @@ import { FilialeService } from 'src/app/services/filiale.service';
 })
 export class FilialeComponent implements OnInit {
 
-  filiales!:Filiale[];
+  filiales!:any[];
 
   constructor(private filialeService:FilialeService, private router:Router) {
 
@@ -26,7 +26,7 @@ export class FilialeComponent implements OnInit {
     )
   }
   updateFiliale(id:number){
-    this.router.navigate(['/dashboard','update-filiales'])
+    this.router.navigate(['/dashboard','update-filiales',`${id}`])
   }
   deleteFiliale(id:number){
     this.filialeService.deleteFiliale(id).subscribe(data=>{

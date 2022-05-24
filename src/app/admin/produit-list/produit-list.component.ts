@@ -10,7 +10,7 @@ import { ProduitService } from 'src/app/services/produit.service';
 })
 export class ProduitListComponent implements OnInit {
 
-  produits!:Produit[];
+  produits!:any[];
 
   constructor(private produitService:ProduitService, private router:Router) {
 
@@ -22,11 +22,11 @@ export class ProduitListComponent implements OnInit {
   private getProduits(){
     this.produitService.getProduitList().subscribe(
       data=>{this.produits=data;
-      console.log(this.produits[0].observation)}
+      console.log(data)}
     )
   }
   updateProduit(id:number){
-    this.router.navigate(['/dashboard','update-produits'])
+    this.router.navigate(['/dashboard','update-produits',`${id}`])
   }
   deleteProduit(id:number){
     this.produitService.deleteProduit(id).subscribe(data=>{

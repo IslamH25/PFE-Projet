@@ -10,8 +10,8 @@
   <tbody>
     <tr *ngFor="let fabricant of fabricants">
       <th scope="row">{{fabricant.id}}</th>
-      <td>{{fabricant.nom}}</td>
-      <td>{{fabricant.type}}</td>
+      <td>{{fabricant.nom_fab}}</td>
+      <td>{{fabricant.type_fab}}</td>
       <td>
         <button (click)="updateFabricant(fabricant.id)" class="btn btn-info">Update</button>
         <button (click)="deleteFabricant(fabricant.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>

@@ -2,8 +2,10 @@ package com.example.demo.Controller;
 
 import com.example.demo.Model.Fabricant;
 import com.example.demo.Model.Filiale;
+import com.example.demo.Model.Service;
 import com.example.demo.Repository.FabricantRepository;
 import com.example.demo.Repository.FilialeRepository;
+import com.example.demo.Repository.ServiceRepository;
 import com.example.demo.domaine.RessourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,10 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
@@ -22,9 +21,12 @@ import java.util.Optional;
 public class FilialeController {
   @Autowired
   private FilialeRepository filialeRepository;
+  @Autowired
+  private ServiceRepository serviceRepository;
 
   @GetMapping("/filiales")
   public List<Filiale> getAllFiliales() {
+    System.out.println(filialeRepository.findAll());
     return filialeRepository.findAll();
   }
 
@@ -36,8 +38,20 @@ public class FilialeController {
   }
 
   @PostMapping("/filiales")
-  public Filiale CreateFiliale(@Valid @RequestBody Filiale filiale) {
-    return filialeRepository.save(filiale);
+  public void CreateFiliale(@Valid @RequestBody Map<String,String> object) {
+    Filiale filiale=new Filiale();
+    filiale.setId(8L);
+    filiale.setNom_fil(object.get("nom_fil"));
+    filiale.setDesc_fil(object.get("desc_fil"));
+    filiale.setSect_fil(object.get("sect_fil"));
+    Set<Service> services=new HashSet<Service>();
+    Service service=new Service();
+    service =serviceRepository.findByNom(object.get("services"));
+    services.add(service);
+    filiale.setService(services);
+    filialeRepository.save(filiale);
+
+
   }
 
 

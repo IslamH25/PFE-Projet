@@ -11,7 +11,7 @@ import { ServiceService } from 'src/app/services/service.service';
 export class ServiceComponent implements OnInit {
 
 
-  services!:Service[];
+  services!:any[];
 
   constructor(private serviceService:ServiceService, private router:Router) {
 
@@ -27,7 +27,7 @@ export class ServiceComponent implements OnInit {
     )
   }
   updateService(id:number){
-    this.router.navigate(['/dashboard','update-services'])
+    this.router.navigate(['/dashboard','update-services',`${id}`])
   }
   deleteService(id:number){
     this.serviceService.deleteService(id).subscribe(data=>{

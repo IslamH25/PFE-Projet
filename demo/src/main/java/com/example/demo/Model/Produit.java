@@ -1,5 +1,6 @@
 package com.example.demo.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -21,7 +23,7 @@ public class Produit {
     private Long ref_piece;
 
   @Column(name = "consom_annee")
-  private Long consomAnnee;
+  private String consomAnnee;
 
   @NotBlank
   @Size(max = 20)
@@ -38,6 +40,24 @@ public class Produit {
   @Column(name = "designation")
   private String designation;
 
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(	name = "produit_fabricant",
+    joinColumns = @JoinColumn(name = "ref_piece"),
+    inverseJoinColumns = @JoinColumn(name = "id_fab"))
+  private Set<Fabricant> fabricants = new HashSet<>();
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(	name = "produit_fournisseur",
+    joinColumns = @JoinColumn(name = "ref_piece"),
+    inverseJoinColumns = @JoinColumn(name = "id_four"))
+  private Set<Fournisseur> fournisseurs = new HashSet<>();
+
+  public Set<Fabricant> getFabricants() {
+    return fabricants;
+  }
+
+  public void setFabricants(Set<Fabricant> fabricants) {
+    this.fabricants = fabricants;
+  }
 
   public Long getRef_piece() {
     return ref_piece;
@@ -47,11 +67,11 @@ public class Produit {
     this.ref_piece = ref_piece;
   }
 
-  public Long getConsomAnnee() {
+  public String getConsomAnnee() {
     return consomAnnee;
   }
 
-  public void setConsomAnnee(Long consomAnnee) {
+  public void setConsomAnnee(String consomAnnee) {
     this.consomAnnee = consomAnnee;
   }
 
@@ -79,6 +99,13 @@ public class Produit {
     this.observation = observation;
   }
 
+  public Set<Fournisseur> getFournisseurs() {
+    return fournisseurs;
+  }
+
+  public void setFournisseurs(Set<Fournisseur> fournisseurs) {
+    this.fournisseurs = fournisseurs;
+  }
 
 
   @Override
@@ -88,8 +115,9 @@ public class Produit {
       ", consomAnnee=" + consomAnnee +
       ", prix='" + prix + '\'' +
       ", observation='" + observation + '\'' +
-      ", designation='" + designation +
-
+      ", designation='" + designation + '\'' +
+      ", fabricants=" + fabricants +
+      ", fournisseurs=" + fournisseurs +
       '}';
   }
 }

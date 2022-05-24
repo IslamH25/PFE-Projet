@@ -1,5 +1,5 @@
 export class Fournisseur{
   id!:number;
-  name!:string;
+  nom_four!:string;
 
 }

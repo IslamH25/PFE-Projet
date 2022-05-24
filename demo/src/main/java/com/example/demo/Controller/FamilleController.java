@@ -35,8 +35,11 @@ public class FamilleController {
     return ResponseEntity.ok().body(famille);
   }
   @PostMapping("/familles")
-  public Famille CreateFamille(@Valid @RequestBody Famille famille) {
-    return familleRepository.save(famille);
+  public void CreateFamille(@RequestBody Map<String,String> object) {
+    Famille famille=new Famille();
+    famille.setNom_famille(object.get("nom_famille"));
+    famille.setDesc_famille(object.get("desc_famille"));
+    familleRepository.save(famille);
   }
 
 

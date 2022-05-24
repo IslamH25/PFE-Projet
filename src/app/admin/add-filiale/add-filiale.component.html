@@ -1,0 +1,27 @@
+<div class="col-md-8 offset-md-3">
+  <h3>Add Filiale</h3>
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+       <label>Nom de la Filiale</label>
+       <input type="text" class="form-control" id="nom_fil" [(ngModel)]="filiale.nom_fil" name="nom_fil">
+
+    </div>
+    <div class="form-group">
+      <label>Description de la Filiale</label>
+      <input type="text" class="form-control" id="desc_fil" [(ngModel)]="filiale.desc_fil" name="desc_fil">
+   </div>
+   <div class="form-group">
+    <label>Section de la Filiale</label>
+    <input type="text" class="form-control" id="sect_fil" [(ngModel)]="filiale.sect_fil" name="sect_fil">
+ </div>
+   <div class="form-group" >
+    <label>Services</label>
+    <select type="text" class="form-control" id="service" [(ngModel)]="filiale.services" name="service">
+      <option *ngFor="let service of services" value={{service.nom_serv}} >{{service.nom_serv}}</option>
+    </select>
+  </div>
+  <button class="btn btn-success" type="submit">Submit</button>
+
+  </form>
+  </div>

@@ -19,18 +19,18 @@ public class Fournisseur {
   @NotBlank
   @Size(max = 20)
   @Column(name = "nom_four")
-  private String nom_four;
+  private String nom;
 
   public Long getId() {
     return id;
   }
 
   public String getNom_four() {
-    return nom_four;
+    return nom;
   }
 
   public void setNom_four(String nom_four) {
-    this.nom_four = nom_four;
+    this.nom = nom_four;
   }
 
   public void setId(Long id) {
@@ -41,7 +41,7 @@ public class Fournisseur {
   public String toString() {
     return "Fournisseur{" +
       "id=" + id +
-      ", nom_four='" + nom_four + '\'' +
+      ", nom_four='" + nom + '\'' +
       '}';
   }
 }

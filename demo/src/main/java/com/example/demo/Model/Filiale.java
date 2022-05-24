@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 @AllArgsConstructor
@@ -33,9 +34,22 @@ public class Filiale {
   @Size(max = 20)
   @Column(name = "sect_act")
   private String sect_fil;
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(	name = "filiale_service",
+    joinColumns = @JoinColumn(name = "id_fil"),
+    inverseJoinColumns = @JoinColumn(name = "id_serv"))
+  private Set<Service>  service = new HashSet<>();
 
   public Long getId() {
     return id;
+  }
+
+  public Set<Service> getService() {
+    return service;
+  }
+
+  public void setService(Set<Service> service) {
+    this.service = service;
   }
 
   public void setId(Long id) {
@@ -73,6 +87,7 @@ public class Filiale {
       ", nom_fil='" + nom_fil + '\'' +
       ", desc_fil='" + desc_fil + '\'' +
       ", sect_fil='" + sect_fil + '\'' +
+      ", service=" + service +
       '}';
   }
 }

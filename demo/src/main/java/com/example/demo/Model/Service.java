@@ -22,7 +22,7 @@ public class Service {
   @NotBlank
   @Size(max = 20)
   @Column(name = "nom_serv")
-  private String nom_serv;
+  private String nom;
 
 
   @NotBlank
@@ -39,11 +39,11 @@ public class Service {
   }
 
   public String getNom_serv() {
-    return nom_serv;
+    return nom;
   }
 
   public void setNom_serv(String nom_serv) {
-    this.nom_serv = nom_serv;
+    this.nom= nom_serv;
   }
 
   public String getDesignation_serv() {
@@ -58,7 +58,7 @@ public class Service {
   public String toString() {
     return "Service{" +
       "id=" + id +
-      ", nom_serv='" + nom_serv + '\'' +
+      ", nom_serv='" + nom + '\'' +
       ", designation_serv='" + designation_serv + '\'' +
       '}';
   }
