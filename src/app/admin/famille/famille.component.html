@@ -1,0 +1,23 @@
+
+<table class="table table-striped table-hover" style="margin-top:13%;">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let famille of familles">
+      <th scope="row">{{famille.id}}</th>
+      <td>{{famille.nom_famille}}</td>
+      <td>{{famille.desc_famille}}</td>
+      <td>
+        <a *ngIf="roles[0]==='ROLE_ADMIN'" href="#editFamilleModal" (click)="updateFamille(famille.id)" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+        <a *ngIf="roles[0]==='ROLE_ADMIN'" href="#deleteFamilleModal" (click)="deleteFamille(famille.id)" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

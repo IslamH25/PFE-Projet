@@ -1,0 +1,521 @@
+/*----------------------------------------------------------------------------------------*/
+/*--------------------------------------SEARCH-------------------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+.card {
+  box-shadow: 0 3px 7px 2px rgba(102, 102, 102, 0.589);;
+}
+
+.advanced{
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #f5bf23 !important;
+}
+
+#tousbtn{
+  width: 190px;
+}
+
+select{
+  padding: .2rem .5rem;
+  border: 2px solid #7a7a7a;
+  margin-top:-15px ;
+}
+
+.btn-secondary,
+.btn-secondary:focus,
+.btn-secondary:active
+{
+  box-shadow: none;
+  font-size:.9rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  background: #f5bf23;
+  color: #111;
+}
+
+input{
+  padding: .2rem .5rem;
+  border: 2px solid #7a7a7a;
+
+}
+
+.form-control:focus{
+  box-shadow: none;
+  border: 2px solid #f5bf23;
+
+}
+
+
+/*----------------------------------------------------------------------------------------*/
+/*--------------------------------------PANNAUX-------------------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+
+th{
+  width: 120px;
+}
+table{
+  margin-top: 110px;
+  border: 2px solid #567692;
+  padding: 8px;
+}
+
+table th, table td {
+  border: .4px solid #567692;
+  padding: 8px;
+}
+
+table tr:nth-child(even){background-color: #ffd760ce;}
+table th:hover {background-color: #ddd;}
+table td:hover {background-color: #ddd;}
+
+.panneaux .pan{
+  margin-top: 90px;
+  margin-left:13.2%;
+
+
+  background: rgb(255,255,255,.2);
+  box-shadow: 0 3px 7px 2px rgba(102, 102, 102, 0.589);
+  flex-direction: column;
+  padding: 4.37rem 2.8rem 2.62rem 2.8rem;
+  border-radius: 15px;
+
+  width: 1000px;
+  height: 350px;
+
+  border-radius: 30px;
+}
+
+
+
+.title {
+  font-size: 1rem;
+  margin-top: 5rem;
+  margin-bottom: 1.37rem;
+}
+
+.para{
+  color:hsl(208, 11%, 55%);
+  font-size: 15px;
+  line-height: .8em;
+}
+
+.panneaux .pan .left img{
+  float: left;
+  width: 300.19px;
+  height: 300px;
+  margin-top: -60px;
+}
+
+.panneaux .pan .right .pan-content{
+  width: 60%;
+  text-align: left;
+  align-self: center;
+  max-width: min(57%, 30.25rem);
+  float: right;
+  margin-top: -130px;
+}
+
+
+
+/* nav bar style----------------------------- */
+#navhead .header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+          box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  padding: 1.5rem 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 1000;
+  background: #fff;
+  height: 6.5rem;
+}
+
+#navhead .header .logo {
+  font-size: 2.5rem;
+  color: #111;
+  text-transform: capitalize;
+}
+
+#navhead .header a img{
+  height: 4.3rem;
+  margin-top: -5px;
+}
+
+#navhead .header .logo span {
+  color: #f5bf23;
+}
+
+#navhead .header .navbar a {
+  font-size: 1.2rem;
+  color: #111;
+  text-transform: capitalize;
+  margin: 0 1rem;
+}
+
+#navhead .header .navbar a:hover {
+  color: #f5bf23;
+}
+
+#navhead .header .icons div {
+  height: 3.2rem;
+  width: 3.2rem;
+  line-height: 3.2rem;
+  font-size: 1.2rem;
+  background: #eee;
+  color: #111;
+  cursor: pointer;
+  text-align: center;
+  margin-left: .3rem;
+}
+
+#navhead .header .icons div:hover {
+  background: #111;
+  color: #fff;
+}
+
+#navhead #navhead .header #menu-btn {
+  display: none;
+}
+
+#navhead .header .search-form {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 70rem;
+  background: #fff;
+  -webkit-box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+          box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  padding: 1rem;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  -webkit-animation: fadeIn .2s linear;
+          animation: fadeIn .2s linear;
+}
+
+#navhead .header .search-form.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#navhead .header .search-form input {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  background: #eee;
+  font-size: 1.6rem;
+  color: #666;
+}
+
+#navhead .header .search-form label {
+  font-size: 2.5rem;
+  color: #111;
+  cursor: pointer;
+  margin: 0 1rem;
+}
+
+#navhead .header .search-form label:hover {
+  color: #f5bf23;
+}
+
+#navhead .header .login-form {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 40rem;
+  background: #fff;
+  -webkit-box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+          box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  padding: 2rem;
+  text-align: center;
+  -webkit-animation: fadeIn .2s linear;
+          animation: fadeIn .2s linear;
+  display: none;
+}
+
+#navhead .header .login-form.active {
+  display: block;
+}
+
+#navhead .header .login-form h3 {
+  font-size: 2.5rem;
+  color: #111;
+  text-transform: capitalize;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+#navhead .header .login-form .box {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  background: #eee;
+  font-size: 1.6rem;
+  color: #666;
+  margin: .7rem 0;
+}
+
+#navhead .header .login-form .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+#navhead .header .login-form .flex label {
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+}
+
+#navhead .header .login-form .flex a {
+  font-size: 1.5rem;
+  color: #666;
+  margin-left: auto;
+}
+
+#navhead .header .login-form .flex a:hover {
+  color: #f5bf23;
+  text-decoration: underline;
+}
+
+#navhead .header .login-form .btn {
+  width: 100%;
+}
+
+#navhead .header .login-form p {
+  font-size: 1.5rem;
+  color: #666;
+  line-height: 2;
+  padding-top: 1.5rem;
+}
+
+#navhead .header .login-form p a {
+  color: #f5bf23;
+}
+
+#navhead .header .login-form p a:hover {
+  text-decoration: underline;
+}
+
+.contact-info {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 35rem;
+  background: #fff;
+  height: 100%;
+  text-align: center;
+  z-index: 1100;
+  padding: 0 2rem;
+  padding-top: 5rem;
+  display: none;
+}
+
+.contact-info.active {
+  -webkit-box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+  display: block;
+}
+
+.contact-info #close-contact-info {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+  font-size: 4rem;
+  color: #111;
+}
+
+.contact-info #close-contact-info:hover {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.contact-info .info {
+  padding: 2rem 0;
+}
+
+.contact-info .info i {
+  height: 4rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  background: #eee;
+  color: #111;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+.contact-info .info i:hover {
+  background: #111;
+  color: #fff;
+}
+
+.contact-info .info h3 {
+  font-size: 2rem;
+  color: #111;
+  text-transform: capitalize;
+  padding: 1rem 0;
+}
+
+.contact-info .info p {
+  font-size: 1.5rem;
+  color: #666;
+  line-height: 2;
+}
+
+.contact-info .share {
+  padding-top: 2rem;
+  border-top: .1rem solid rgba(0,0,0,.3);
+  margin-top: 1rem;
+}
+
+.contact-info .share a {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  background: #eee;
+  color: #111;
+  cursor: pointer;
+  text-align: center;
+  margin: 0 .3rem;
+}
+
+.contact-info .share a:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* footer style ------------------------------------ */
+
+
+.footbtn {
+  display: inline-block;
+  padding: 0.8rem 2.5rem;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  height: 48px;
+  width: 150px;
+  margin-top: 3rem;
+}
+
+.footbtn:hover {
+  background: #f5bf23;
+  color: #111;
+}
+
+.footer {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.788);
+  height: 210px;
+  margin-top:90px;
+}
+
+.footer .links .btn {
+  margin: .5rem;
+}
+
+.footer .credit {
+  font-size: 1.2rem;
+  color: #fff;
+  text-transform: capitalize;
+  margin-top:2rem;
+  padding-top: 1rem;
+}
+
+.footer .credit span {
+  color: #f5bf23;
+}
+
+/* .footer {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(../images/footer-bg.jpg) no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/footer-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.footer .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2rem;
+  padding: 1.5rem 0;
+  color: #fff;
+}
+
+.footer .box-container .box a {
+  display: block;
+  font-size: 1.4rem;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.footer .box-container .box a i {
+  color: #219150;
+  padding-right: .5rem;
+}
+
+.footer .box-container .box a:hover {
+  color: #219150;
+}
+
+.footer .box-container .box a:hover i {
+  padding-right: 2rem;
+}
+
+.footer .credit {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding: 1rem;
+  padding-top: 2.5rem;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.footer .credit span {
+  color: #219150;
+} */
+
+

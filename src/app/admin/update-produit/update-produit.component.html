@@ -1,0 +1,60 @@
+<div class="card o-hidden border-0 shadow-lg my-5" style="margin-top:14% !important; height: 450px;">
+  <div class="card-body p-0">
+    <div class="row">
+      <div class="text-center">
+        <h1 class="h4 text-gray-900 mb-4" style=" color:#5F9EA0 !important; font-size: 27px; font-weight: 30px; margin-top: 10px;">
+          Modifier le produit</h1>
+      </div>
+
+      <form class="user col-lg-6 d-none d-lg-block" (ngSubmit)="onSubmit()" >
+        <div class="form-floating" style="border:#5F9EA0 solid; border-radius:30px; padding-left:15px; height: 60px; width: 82%; margin-left: 40px;">
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+          id="ref_piece" [(ngModel)]="produit.ref_piece" name="ref_piece"></textarea>
+          <label for="floatingTextarea">Reference du produit</label>
+        </div>
+        <br>
+        <div class="form-floating" style="border:#5F9EA0 solid; border-radius:30px; padding-left:15px; height: 60px; width: 82%; margin-left: 40px;">
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+          id="prix" [(ngModel)]="produit.prix" name="prix"></textarea>
+          <label for="floatingTextarea">Prix du produit</label>
+        </div>
+        <br>
+        <div class="form-floating" style="border:#5F9EA0 solid; border-radius:30px; padding-left:15px; height: 60px; width: 82%; margin-left: 40px;">
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+          id="observation" [(ngModel)]="produit.observation" name="observation"></textarea>
+          <label for="floatingTextarea">Observation du produit</label>
+        </div>
+        <br>
+        <div class="form-floating" style="border:#5F9EA0 solid; border-radius:30px; padding-left:15px; height: 60px; width: 82%; margin-left: 40px;">
+          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+          id="designation" [(ngModel)]="produit.designation" name="desigantion"></textarea>
+          <label for="floatingTextarea">Designation du produit</label>
+        </div>
+      </form>
+      <div class="col-lg-6">
+        <div class="p-5">
+            <form class="user" (ngSubmit)="onSubmit()">
+                <div class="form-floating" style="border:#5F9EA0 solid; border-radius:30px; padding-left:15px; height: 60px; margin-top: -48px;">
+                  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                  id="consomAnnee" [(ngModel)]="produit.consomAnnee" name="consomAnnee"></textarea>
+                  <label for="floatingTextarea">Consommation Annee</label>
+                </div>
+                <br>
+                <select type="text" class="form-select" aria-label="Default select example" id="fabricant" [(ngModel)]="produit.fabricants" name="fabricant"
+                  style="border:#5F9EA0 solid; border-radius:30px; padding-left:15px; height: 60px; width: 409px;">
+                  <option *ngFor="let fabricant of fabricants" value={{fabricant.nom_fab}} >{{fabricant.nom_fab}}</option>
+                </select>
+                <br>
+                <select type="text" class="form-select" aria-label="Default select example" id="fournisseur" [(ngModel)]="produit.fournisseurs" name="fournisseur"
+                  style="border:#5F9EA0 solid; border-radius:30px; padding-left:15px; height: 60px; width: 409px;">
+                  <option *ngFor="let fournisseur of fournisseurs" value={{fournisseur.nom_four}} >{{fournisseur.nom_four}}</option>
+                </select>
+                <br>
+                <button class="btn btn-success btn-user btn-block" type="submit" style="border-radius:30px; background-color: #5F9EA0; height: 60px; font-size: 17px;">
+                  Modifier</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

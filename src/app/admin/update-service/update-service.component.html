@@ -1,0 +1,29 @@
+
+  <div class="card o-hidden border-0 shadow-lg my-5" style="margin-top:17% !important; width: 50%; height: 370px; margin-left: 24%;">
+    <div class="card-body p-0">
+        <div class="p-5">
+            <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4" style=" color:#5F9EA0 !important; font-size: 27px; font-weight: 30px; margin-top: -23px;">
+                  Modifier le service</h1>
+            </div>
+            <hr>
+            <form class="user" (ngSubmit)="onSubmit()">
+                <div class="form-floating" style="border: solid; border-radius:30px; padding-left:15px; height: 60px;">
+                  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                  id="nom_serv" [(ngModel)]="service.nom_serv" name="nom_serv"></textarea>
+                  <label for="floatingTextarea">Nom du service</label>
+                </div>
+                <br>
+                <div class="form-floating" style="border: solid; border-radius:30px; padding-left:15px; height: 60px;">
+                  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                  id="designation_serv" [(ngModel)]="service.designation_serv" name="designation_serv"></textarea>
+                  <label for="floatingTextarea">Designation du service</label>
+                </div>
+                <br>
+                <button class="btn btn-success btn-user btn-block" type="submit" style="border-radius:30px; background-color: #5F9EA0; height: 60px; font-size: 17px;">
+                  Modifier</button>
+            </form>
+
+        </div>
+    </div>
+  </div>

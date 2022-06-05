@@ -1,0 +1,294 @@
+
+#navhead .header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+          box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  padding: 1.5rem 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: 1000;
+  background: #fff;
+  height: 6.5rem;
+}
+
+#navhead .header .logo {
+  font-size: 2.5rem;
+  color: #111;
+  text-transform: capitalize;
+}
+
+#navhead .header a img{
+  height: 4.3rem;
+  margin-top: -5px;
+}
+
+#navhead .header .logo span {
+  color: #f5bf23;
+}
+
+#navhead .header .navbar a {
+  font-size: 1.2rem;
+  color: #111;
+  text-transform: capitalize;
+  margin: 0 1rem;
+}
+
+#navhead .header .navbar a:hover {
+  color: #f5bf23;
+}
+
+#navhead .header .icons div {
+  height: 3.2rem;
+  width: 3.2rem;
+  line-height: 3.2rem;
+  font-size: 1.2rem;
+  background: #eee;
+  color: #111;
+  cursor: pointer;
+  text-align: center;
+  margin-left: .3rem;
+}
+
+#navhead .header .icons div:hover {
+  background: #111;
+  color: #fff;
+}
+
+#navhead #navhead .header #menu-btn {
+  display: none;
+}
+
+#navhead .header .search-form {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 70rem;
+  background: #fff;
+  -webkit-box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+          box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  padding: 1rem;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  -webkit-animation: fadeIn .2s linear;
+          animation: fadeIn .2s linear;
+}
+
+#navhead .header .search-form.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#navhead .header .search-form input {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  background: #eee;
+  font-size: 1.6rem;
+  color: #666;
+}
+
+#navhead .header .search-form label {
+  font-size: 2.5rem;
+  color: #111;
+  cursor: pointer;
+  margin: 0 1rem;
+}
+
+#navhead .header .search-form label:hover {
+  color: #f5bf23;
+}
+
+#navhead .header .login-form {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 40rem;
+  background: #fff;
+  -webkit-box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+          box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  padding: 2rem;
+  text-align: center;
+  -webkit-animation: fadeIn .2s linear;
+          animation: fadeIn .2s linear;
+  display: none;
+}
+
+#navhead .header .login-form.active {
+  display: block;
+}
+
+#navhead .header .login-form h3 {
+  font-size: 2.5rem;
+  color: #111;
+  text-transform: capitalize;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+#navhead .header .login-form .box {
+  width: 100%;
+  padding: 1.2rem 1.4rem;
+  background: #eee;
+  font-size: 1.6rem;
+  color: #666;
+  margin: .7rem 0;
+}
+
+#navhead .header .login-form .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+#navhead .header .login-form .flex label {
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+}
+
+#navhead .header .login-form .flex a {
+  font-size: 1.5rem;
+  color: #666;
+  margin-left: auto;
+}
+
+#navhead .header .login-form .flex a:hover {
+  color: #f5bf23;
+  text-decoration: underline;
+}
+
+#navhead .header .login-form .btn {
+  width: 100%;
+}
+
+#navhead .header .login-form p {
+  font-size: 1.5rem;
+  color: #666;
+  line-height: 2;
+  padding-top: 1.5rem;
+}
+
+#navhead .header .login-form p a {
+  color: #f5bf23;
+}
+
+#navhead .header .login-form p a:hover {
+  text-decoration: underline;
+}
+
+.contact-info {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 35rem;
+  background: #fff;
+  height: 100%;
+  text-align: center;
+  z-index: 1100;
+  padding: 0 2rem;
+  padding-top: 5rem;
+  display: none;
+}
+
+.contact-info.active {
+  -webkit-box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+  display: block;
+}
+
+.contact-info #close-contact-info {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+  font-size: 4rem;
+  color: #111;
+}
+
+.contact-info #close-contact-info:hover {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.contact-info .info {
+  padding: 2rem 0;
+}
+
+.contact-info .info i {
+  height: 4rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  background: #eee;
+  color: #111;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+.contact-info .info i:hover {
+  background: #111;
+  color: #fff;
+}
+
+.contact-info .info h3 {
+  font-size: 2rem;
+  color: #111;
+  text-transform: capitalize;
+  padding: 1rem 0;
+}
+
+.contact-info .info p {
+  font-size: 1.5rem;
+  color: #666;
+  line-height: 2;
+}
+
+.contact-info .share {
+  padding-top: 2rem;
+  border-top: .1rem solid rgba(0,0,0,.3);
+  margin-top: 1rem;
+}
+
+.contact-info .share a {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  background: #eee;
+  color: #111;
+  cursor: pointer;
+  text-align: center;
+  margin: 0 .3rem;
+}
+
+.contact-info .share a:hover {
+  background: #111;
+  color: #fff;
+}
+
+
