@@ -25,7 +25,10 @@ public class FournisseurController {
 
   @GetMapping("/fournisseurs")
   public List<Fournisseur> getAllFournisseurs(){
+<<<<<<< HEAD
     System.out.println(fournisseurRepository.findAll());
+=======
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
     return fournisseurRepository.findAll();
   }
   @GetMapping("/fournisseurs/{id}")
@@ -35,10 +38,15 @@ public class FournisseurController {
     return ResponseEntity.ok().body(fournisseur);
   }
   @PostMapping("/fournisseurs")
+<<<<<<< HEAD
   public void CreateFournisseur( @RequestBody Map<String,String> object ) {
     Fournisseur fournisseur=new Fournisseur();
     fournisseur.setNom_four(object.get("nom_four"));
     fournisseurRepository.save(fournisseur);
+=======
+  public Fournisseur CreateFournisseur(@Valid @RequestBody Fournisseur fournisseur) {
+    return fournisseurRepository.save(fournisseur);
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
   }
 
 

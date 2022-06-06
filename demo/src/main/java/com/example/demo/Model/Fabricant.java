@@ -7,6 +7,10 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+<<<<<<< HEAD
+=======
+import java.util.HashSet;
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
 import java.util.LinkedHashSet;
 import java.util.Set;
 @AllArgsConstructor
@@ -22,12 +26,22 @@ public class Fabricant {
   @NotBlank
   @Size(max = 20)
   @Column(name = "nom_fab")
+<<<<<<< HEAD
   private String nom;
+=======
+  private String nom_fab;
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
 
   @NotBlank
   @Size(max = 20)
   @Column(name = "type_fab")
   private String type_fab;
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
   public Long getId() {
     return id;
   }
@@ -37,11 +51,19 @@ public class Fabricant {
   }
 
   public String getNom_fab() {
+<<<<<<< HEAD
     return nom;
   }
 
   public void setNom_fab(String nom_fab) {
     this.nom = nom_fab;
+=======
+    return nom_fab;
+  }
+
+  public void setNom_fab(String nom_fab) {
+    this.nom_fab = nom_fab;
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
   }
 
   public String getType_fab() {
@@ -56,7 +78,11 @@ public class Fabricant {
   public String toString() {
     return "Fabricant{" +
       "id=" + id +
+<<<<<<< HEAD
       ", nom_fab='" + nom + '\'' +
+=======
+      ", nom_fab='" + nom_fab + '\'' +
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
       ", type_fab='" + type_fab + '\'' +
       '}';
   }

@@ -23,7 +23,11 @@ public class Famille {
   @NotBlank
   @Size(max = 20)
   @Column(name = "nom_famille")
+<<<<<<< HEAD
   private String nom;
+=======
+  private String nom_famille;
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
 
 
   @NotBlank
@@ -40,17 +44,26 @@ public class Famille {
   }
 
   public String getNom_famille() {
+<<<<<<< HEAD
     return nom;
   }
 
   public void setNom_famille(String nom_famille) {
     this.nom = nom_famille;
+=======
+    return nom_famille;
+  }
+
+  public void setNom_famille(String nom_famille) {
+    this.nom_famille = nom_famille;
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
   }
 
   public String getDesc_famille() {
     return desc_famille;
   }
 
+<<<<<<< HEAD
   public void setDesc_famille(String desc_famille) {this.desc_famille = desc_famille;}
 
   @Override
@@ -60,5 +73,9 @@ public class Famille {
       ", nom='" + nom + '\'' +
       ", desc_famille='" + desc_famille + '\'' +
       '}';
+=======
+  public void setDesc_famille(String desc_famille) {
+    this.desc_famille = desc_famille;
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
   }
 }

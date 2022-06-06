@@ -38,6 +38,7 @@ export class UpdateUserComponent implements OnInit {
   }
   goToUserList(){
     this.router.navigate(['/dashboard','userList'])
+
   }
 
 }

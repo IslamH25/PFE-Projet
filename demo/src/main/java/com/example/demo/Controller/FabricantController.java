@@ -23,7 +23,10 @@ public class FabricantController {
 
   @GetMapping("/fabricants")
   public List<Fabricant> getAllFabricant(){
+<<<<<<< HEAD
     System.out.println(fabricantRepository.findAll());
+=======
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
     return fabricantRepository.findAll();
   }
   @GetMapping("/fabricants/{id}")
@@ -34,8 +37,11 @@ public class FabricantController {
   }
   @PostMapping("/fabricants")
   public Fabricant CreateFabricant(@Valid @RequestBody Fabricant fabricant) {
+<<<<<<< HEAD
 
     System.out.println(fabricant);
+=======
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
     return fabricantRepository.save(fabricant);
   }
 

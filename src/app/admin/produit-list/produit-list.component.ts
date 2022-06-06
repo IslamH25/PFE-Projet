@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 import { ProduitService } from 'src/app/services/produit.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
+
 @Component({
   selector: 'app-produit-list',
   templateUrl: './produit-list.component.html',
@@ -12,6 +12,7 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 export class ProduitListComponent implements OnInit {
 
   produits!:any[];
+
   constructor(private produitService:ProduitService,private tokenStorage: TokenStorageService, private router:Router) {
 
   }
@@ -33,6 +34,7 @@ export class ProduitListComponent implements OnInit {
   }
   updateProduit(id:number){
     this.router.navigate(['/dashboard','update-produits',`${id}`])
+
   }
   deleteProduit(id:number){
     this.produitService.deleteProduit(id).subscribe(data=>{

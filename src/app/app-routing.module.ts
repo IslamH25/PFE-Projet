@@ -19,6 +19,7 @@ const routes: Routes = [
   {path:'webPage',loadChildren:webModule},
   {path: 'about', component : AboutComponent},
   {path: 'catalogue', component : CatalogueComponent}
+
 ];
 
 @NgModule({

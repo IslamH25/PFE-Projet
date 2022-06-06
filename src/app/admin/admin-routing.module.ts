@@ -25,6 +25,7 @@ import { UpdateFilialeComponent } from './update-filiale/update-filiale.componen
 import { UpdateServiceComponent } from './update-service/update-service.component';
 
 
+
 const routes: Routes = [
   {path :'dashboard' , component: DashboardComponent,
   children : [
@@ -49,6 +50,7 @@ const routes: Routes = [
       {path:"update-produits/:id",component:UpdateProduitComponent},
       {path:"update-filiales/:id",component:UpdateFilialeComponent},
       {path:"update-services/:id", component:UpdateServiceComponent}
+
 
 
   ]},

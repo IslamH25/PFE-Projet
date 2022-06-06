@@ -4,6 +4,7 @@ import { Famille } from 'src/app/models/famille';
 import { FamilleService } from 'src/app/services/famille.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
+
 @Component({
   selector: 'app-famille',
   templateUrl: './famille.component.html',
@@ -27,6 +28,7 @@ export class FamilleComponent implements OnInit {
       this.roles=user.roles
       console.log(this.roles)
   }
+
   }
   private getFamilles(){
     this.familleService.getFamilleList().subscribe(
@@ -36,6 +38,7 @@ export class FamilleComponent implements OnInit {
   }
   updateFamille(id:number){
     this.router.navigate(['/dashboard','update-familles',`${id}`])
+
 
   }
   deleteFamille(id:number){

@@ -23,7 +23,11 @@ public class Produit {
     private Long ref_piece;
 
   @Column(name = "consom_annee")
+<<<<<<< HEAD
   private String consomAnnee;
+=======
+  private Long consomAnnee;
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
 
   @NotBlank
   @Size(max = 20)
@@ -40,16 +44,34 @@ public class Produit {
   @Column(name = "designation")
   private String designation;
 
+<<<<<<< HEAD
+=======
+  @ManyToOne(fetch = FetchType.LAZY,optional = false)
+  @JoinColumn(name="id_famille",nullable = false)
+  @JsonIgnore
+  private Famille famille;
+
+  @ManyToOne(fetch = FetchType.LAZY,optional = false)
+  @JoinColumn(name="id_filiale",nullable = false)
+  @JsonIgnore
+  private Filiale filiale;
+
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(	name = "produit_fabricant",
     joinColumns = @JoinColumn(name = "ref_piece"),
     inverseJoinColumns = @JoinColumn(name = "id_fab"))
+<<<<<<< HEAD
   private Set<Fabricant> fabricants = new HashSet<>();
+=======
+  private Set<Fabricant> fabricant = new HashSet<>();
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
 
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(	name = "produit_fournisseur",
     joinColumns = @JoinColumn(name = "ref_piece"),
     inverseJoinColumns = @JoinColumn(name = "id_four"))
+<<<<<<< HEAD
   private Set<Fournisseur> fournisseurs = new HashSet<>();
 
   @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -67,6 +89,24 @@ public class Produit {
 
   public void setFabricants(Set<Fabricant> fabricants) {
     this.fabricants = fabricants;
+=======
+  private Set<Fournisseur> fournisseur = new HashSet<>();
+
+  public Set<Fournisseur> getFournisseur() {
+    return fournisseur;
+  }
+
+  public void setFournisseur(Set<Fournisseur> fournisseur) {
+    this.fournisseur = fournisseur;
+  }
+
+  public Set<Fabricant> getFabricant() {
+    return fabricant;
+  }
+
+  public void setFabricants(Set<Fabricant> fabricant) {
+    this.fabricant = fabricant;
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
   }
 
   public Long getRef_piece() {
@@ -76,11 +116,20 @@ public class Produit {
   public void setRef_piece(Long ref_piece) {
     this.ref_piece = ref_piece;
   }
+<<<<<<< HEAD
   public String getConsomAnnee() {
     return consomAnnee;
   }
 
   public void setConsomAnnee(String consomAnnee) {
+=======
+
+  public Long getConsomAnnee() {
+    return consomAnnee;
+  }
+
+  public void setConsomAnnee(Long consomAnnee) {
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
     this.consomAnnee = consomAnnee;
   }
 
@@ -95,15 +144,25 @@ public class Produit {
   public String getObservation() {
     return observation;
   }
+<<<<<<< HEAD
 
   public String getDesignation() {
     return designation;
   }
 
+=======
+  public void setObservation(String observation) {
+    this.observation = observation;
+  }
+  public String getDesignation() {
+    return designation;
+  }
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
   public void setDesignation(String designation) {
     this.designation = designation;
   }
 
+<<<<<<< HEAD
   public void setObservation(String observation) {
     this.observation = observation;
   }
@@ -132,11 +191,21 @@ public class Produit {
   public void setFamille(Famille famille) {
     this.famille = famille;
   }
+=======
+  public Famille getFamille() { return famille; }
+
+  public void setFamille(Famille famille) { this.famille = famille; }
+
+  public Filiale getFiliale() { return filiale;}
+
+  public void setFiliale(Filiale filiale) { this.filiale = filiale;}
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
 
   @Override
   public String toString() {
     return "Produit{" +
       "ref_piece=" + ref_piece +
+<<<<<<< HEAD
       ", consomAnnee='" + consomAnnee + '\'' +
       ", prix='" + prix + '\'' +
       ", observation='" + observation + '\'' +
@@ -145,6 +214,16 @@ public class Produit {
       ", fournisseurs=" + fournisseurs +
       ", filiale=" + filiale +
       ", famille=" + famille +
+=======
+      ", consomAnnee=" + consomAnnee +
+      ", prix='" + prix + '\'' +
+      ", observation='" + observation + '\'' +
+      ", designation='" + designation + '\'' +
+      ", famille=" + famille + '\'' +
+      ", filiale=" + filiale + '\'' +
+      ", fabricant=" + fabricant + '\'' +
+      ", fournisseur=" + fournisseur +
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
       '}';
   }
 }

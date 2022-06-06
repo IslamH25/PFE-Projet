@@ -6,6 +6,7 @@ import { Fournisseur } from '../models/fournisseur';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,6 +20,7 @@ export class FournisseurService {
 
   createFournisseur(fournisseur: Fournisseur):Observable<Object>{
     return this.http.post<Fournisseur>(`${this.baseUrl}`+'fournisseurs',fournisseur)
+
   }
 
   getFournisseurById(id:number):Observable<Fournisseur>{

@@ -17,6 +17,7 @@ export class ProduitService {
 
   createProduit(produit: Produit):Observable<Object>{
     return this.http.post<Produit>(`${this.baseUrl}`+'produits',produit);
+
   }
 
   getProduitById(id:number):Observable<Produit>{

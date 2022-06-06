@@ -23,7 +23,11 @@ public class Filiale {
   @NotBlank
   @Size(max = 20)
   @Column(name = "nom_fil")
+<<<<<<< HEAD
   private String nom;
+=======
+  private String nom_fil;
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
 
   @NotBlank
   @Size(max = 20)
@@ -34,15 +38,24 @@ public class Filiale {
   @Size(max = 20)
   @Column(name = "sect_act")
   private String sect_fil;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(	name = "filiale_service",
     joinColumns = @JoinColumn(name = "id_fil"),
     inverseJoinColumns = @JoinColumn(name = "id_serv"))
+<<<<<<< HEAD
   private Set<Service>  service = new HashSet<>();
 
   public Long getId() {
     return id;
   }
+=======
+  private Set<Service> service = new HashSet<>();
+
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
 
   public Set<Service> getService() {
     return service;
@@ -52,14 +65,30 @@ public class Filiale {
     this.service = service;
   }
 
+<<<<<<< HEAD
+=======
+  public Long getId() {
+    return id;
+  }
+
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
   public void setId(Long id) {
     this.id = id;
   }
 
+<<<<<<< HEAD
   public String getNom_fil() {return nom;}
 
   public void setNom_fil(String nom_fil) {
     this.nom = nom_fil;
+=======
+  public String getNom_fil() {
+    return nom_fil;
+  }
+
+  public void setNom_fil(String nom_fil) {
+    this.nom_fil = nom_fil;
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
   }
 
   public String getDesc_fil() {
@@ -82,10 +111,17 @@ public class Filiale {
   public String toString() {
     return "Filiale{" +
       "id=" + id +
+<<<<<<< HEAD
       ", nom_fil='" + nom + '\'' +
       ", desc_fil='" + desc_fil + '\'' +
       ", sect_fil='" + sect_fil + '\'' +
       ", service=" + service +
+=======
+      ", nom_fil='" + nom_fil + '\'' +
+      ", desc_fil='" + desc_fil + '\'' +
+      ", sect_fil='" + sect_fil + '\'' +
+      ", service='" + service +
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
       '}';
   }
 }

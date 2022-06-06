@@ -17,9 +17,10 @@
       <td>{{filiale.desc_fil}}</td>
       <td>{{filiale.sect_fil}}</td>
       <td>{{filiale.service[0].nom_serv}}</td>
-      <td>
+      <td>D
         <a *ngIf="roles[0]==='ROLE_ADMIN'" href="#editFilialeModal" (click)="updateFiliale(filiale.id)" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
         <a *ngIf="roles[0]==='ROLE_ADMIN'" href="#deleteFilialeModal" (click)="deleteFiliale(filiale.id)" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+
       </td>
     </tr>
   </tbody>

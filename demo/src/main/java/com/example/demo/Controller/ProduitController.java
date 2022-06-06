@@ -1,7 +1,12 @@
 package com.example.demo.Controller;
 
+<<<<<<< HEAD
 import com.example.demo.Model.*;
 import com.example.demo.Repository.*;
+=======
+import com.example.demo.Model.Produit;
+import com.example.demo.Repository.ProduitRepository;
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
 import com.example.demo.domaine.RessourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,8 +14,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+<<<<<<< HEAD
 import java.util.*;
 
+=======
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
@@ -18,6 +30,7 @@ import java.util.*;
 public class ProduitController {
   @Autowired
   private ProduitRepository produitRepository;
+<<<<<<< HEAD
   @Autowired
   private FabricantRepository fabricantRepository;
   @Autowired
@@ -53,6 +66,13 @@ public class ProduitController {
     System.out.println(produitTS);
     return produitTS;
 
+=======
+
+  @GetMapping("/produits")
+  public List<Produit> getAllProduits(){
+    System.out.println(produitRepository.findAll());
+    return produitRepository.findAll();
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
   }
   @GetMapping("/produits/{id}")
   public ResponseEntity<Produit> getProduitById(@PathVariable(value = "id") Long ProduitId){
@@ -61,6 +81,7 @@ public class ProduitController {
     return ResponseEntity.ok().body(produit);
   }
   @PostMapping("/produits")
+<<<<<<< HEAD
   public void CreateProduit(@Valid @RequestBody Map<String,String> object) {
   Produit produit= new Produit();
   produit.setRef_piece(Long.parseLong(object.get("ref_piece")));
@@ -84,6 +105,10 @@ public class ProduitController {
   produit.setFournisseurs(fournisseurs);
   produitRepository.save(produit);
 
+=======
+  public Produit CreateProduit(@Valid @RequestBody Produit produit) {
+    return produitRepository.save(produit);
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
   }
 
 
@@ -110,6 +135,7 @@ public class ProduitController {
 
 
   @PutMapping("/produits/{id}")
+<<<<<<< HEAD
   public ResponseEntity<Produit> updateProduit(@PathVariable Long id, @RequestBody Map<String,String>object) {
     Produit produit= produitRepository.findById(id).orElseThrow(() -> new RessourceNotFoundException("Produit not exist with id :" +id));
     produit.setRef_piece(Long.parseLong(object.get("ref_piece")));
@@ -135,3 +161,22 @@ public class ProduitController {
     return ResponseEntity.ok(updatedProduit);
   }
 }
+=======
+  public ResponseEntity<Produit> updateProduit(@PathVariable("id") Long id, @RequestBody Produit produit) {
+
+
+    Optional<Produit> produitInfo = produitRepository.findById(id);
+
+    if (produitInfo.isPresent()) {
+      Produit produit1 =produitInfo.get();
+      produit1.setConsomAnnee(produit.getConsomAnnee());
+      produit1.setDesignation(produit.getDesignation());
+      produit1.setPrix(produit.getPrix());
+      produit1.setObservation(produit.getObservation());
+
+      return new ResponseEntity<>(produitRepository.save(produit1), HttpStatus.OK);
+    } else {
+      return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+  }}
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76

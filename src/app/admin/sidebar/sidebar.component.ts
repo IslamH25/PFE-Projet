@@ -14,6 +14,7 @@ export class SidebarComponent implements OnInit {
   isLoggedIn = false;
   username!: string;
   roles!:any[]
+
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorage.getToken();
     if (this.isLoggedIn) {
@@ -21,6 +22,7 @@ export class SidebarComponent implements OnInit {
       this.username = user.username;
       this.roles=user.roles
       console.log(this.roles)
+
     }
 
   }

@@ -3,4 +3,5 @@ export class Service{
   nom_serv!:string;
   designation_serv!:string;
 
+
 }

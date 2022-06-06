@@ -16,6 +16,7 @@
       <td>
         <a *ngIf="roles[0]==='ROLE_ADMIN'" href="#editFamilleModal" (click)="updateFamille(famille.id)" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
         <a *ngIf="roles[0]==='ROLE_ADMIN'" href="#deleteFamilleModal" (click)="deleteFamille(famille.id)" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+
       </td>
     </tr>
   </tbody>

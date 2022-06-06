@@ -32,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
+
 @NgModule({
   declarations: [
     AddUserComponent,
@@ -58,6 +59,7 @@ import { HttpClientModule } from '@angular/common/http';
     AddFabricantComponent,
     AddFournisseurComponent,
     AddServiceComponent
+
   ],
   imports: [
     CommonModule,
@@ -65,6 +67,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule
+
 
 
   ], exports :[

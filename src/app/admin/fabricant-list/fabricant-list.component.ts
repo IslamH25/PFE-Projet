@@ -4,6 +4,7 @@ import { Fabricant } from 'src/app/models/fabricant';
 import { FabricantService } from 'src/app/services/fabricant.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
+
 @Component({
   selector: 'app-fabricant-list',
   templateUrl: './fabricant-list.component.html',
@@ -12,7 +13,6 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 export class FabricantListComponent implements OnInit {
 
   fabricants!:any[];
-
   constructor(private fabricantService:FabricantService,private tokenStorage: TokenStorageService, private router:Router) {
 
   }
@@ -26,6 +26,7 @@ export class FabricantListComponent implements OnInit {
       this.roles=user.roles
       console.log(this.roles)
     }
+
   }
   private getFabricants(){
     this.fabricantService.getFabricantList().subscribe(
@@ -34,7 +35,9 @@ export class FabricantListComponent implements OnInit {
     )
   }
   updateFabricant(id:number){
+
     this.router.navigate(['/dashboard','update-fabricants',`${id}`])
+
 
   }
   deleteFabricant(id:number){

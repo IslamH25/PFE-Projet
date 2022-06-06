@@ -4,6 +4,7 @@ import { Filiale } from 'src/app/models/filiale';
 import { FilialeService } from 'src/app/services/filiale.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
+
 @Component({
   selector: 'app-filiale',
   templateUrl: './filiale.component.html',
@@ -27,6 +28,7 @@ export class FilialeComponent implements OnInit {
       this.roles=user.roles
       console.log(this.roles)
     }
+
   }
   private getFiliales(){
     this.filialeService.getFilialeList().subscribe(
@@ -36,6 +38,7 @@ export class FilialeComponent implements OnInit {
   }
   updateFiliale(id:number){
     this.router.navigate(['/dashboard','update-filiales',`${id}`])
+
 
   }
   deleteFiliale(id:number){

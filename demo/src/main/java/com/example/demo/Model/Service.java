@@ -22,7 +22,12 @@ public class Service {
   @NotBlank
   @Size(max = 20)
   @Column(name = "nom_serv")
+<<<<<<< HEAD
   private String nom;
+=======
+  private String nom_serv;
+
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
 
   @NotBlank
   @Size(max = 20)
@@ -38,11 +43,19 @@ public class Service {
   }
 
   public String getNom_serv() {
+<<<<<<< HEAD
     return nom;
   }
 
   public void setNom_serv(String nom_serv) {
     this.nom= nom_serv;
+=======
+    return nom_serv;
+  }
+
+  public void setNom_serv(String nom_serv) {
+    this.nom_serv = nom_serv;
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
   }
 
   public String getDesignation_serv() {
@@ -57,7 +70,11 @@ public class Service {
   public String toString() {
     return "Service{" +
       "id=" + id +
+<<<<<<< HEAD
       ", nom_serv='" + nom + '\'' +
+=======
+      ", nom_serv='" + nom_serv + '\'' +
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
       ", designation_serv='" + designation_serv + '\'' +
       '}';
   }

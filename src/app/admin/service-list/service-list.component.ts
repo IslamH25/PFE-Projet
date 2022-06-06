@@ -4,6 +4,7 @@ import { Service } from 'src/app/models/service';
 import { ServiceService } from 'src/app/services/service.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
+
 @Component({
   selector: 'app-service',
   templateUrl: './service-list.component.html',
@@ -13,6 +14,7 @@ export class ServiceComponent implements OnInit {
 
 
   services!:any[];
+
 
   constructor(private serviceService:ServiceService,private tokenStorage: TokenStorageService, private router:Router) {
 
@@ -27,6 +29,7 @@ export class ServiceComponent implements OnInit {
       this.roles=user.roles
       console.log(this.roles)
   }
+
   }
   private getServices(){
     this.serviceService.getServiceList().subscribe(
@@ -35,7 +38,9 @@ export class ServiceComponent implements OnInit {
     )
   }
   updateService(id:number){
+
     this.router.navigate(['/dashboard','update-services',`${id}`])
+
   }
   deleteService(id:number){
     this.serviceService.deleteService(id).subscribe(data=>{

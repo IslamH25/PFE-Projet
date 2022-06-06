@@ -2,10 +2,15 @@ package com.example.demo.Controller;
 
 import com.example.demo.Model.Fabricant;
 import com.example.demo.Model.Filiale;
+<<<<<<< HEAD
 import com.example.demo.Model.Service;
 import com.example.demo.Repository.FabricantRepository;
 import com.example.demo.Repository.FilialeRepository;
 import com.example.demo.Repository.ServiceRepository;
+=======
+import com.example.demo.Repository.FabricantRepository;
+import com.example.demo.Repository.FilialeRepository;
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
 import com.example.demo.domaine.RessourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,7 +18,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+<<<<<<< HEAD
 import java.util.*;
+=======
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
@@ -21,8 +33,11 @@ import java.util.*;
 public class FilialeController {
   @Autowired
   private FilialeRepository filialeRepository;
+<<<<<<< HEAD
   @Autowired
   private ServiceRepository serviceRepository;
+=======
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
 
   @GetMapping("/filiales")
   public List<Filiale> getAllFiliales() {
@@ -38,6 +53,7 @@ public class FilialeController {
   }
 
   @PostMapping("/filiales")
+<<<<<<< HEAD
   public void CreateFiliale(@Valid @RequestBody Map<String,String> object) {
     Filiale filiale=new Filiale();
     filiale.setId(8L);
@@ -51,6 +67,10 @@ public class FilialeController {
     filiale.setService(services);
     filialeRepository.save(filiale);
 
+=======
+  public Filiale CreateFiliale(@Valid @RequestBody Filiale filiale) {
+    return filialeRepository.save(filiale);
+>>>>>>> 3f2a8eb534787e4fe7c0624be81fc66d6ea3fa76
   }
 
 

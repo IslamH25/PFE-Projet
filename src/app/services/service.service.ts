@@ -11,7 +11,6 @@ export class ServiceService {
   listData !: Service[];
   constructor( private http:HttpClient) { }
   private baseUrl="http://localhost:8090/api/"
-
   getServiceList(): Observable<Service[]>{
     return this.http.get<Service[]>(`${this.baseUrl}`+'services')
   }

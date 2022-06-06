@@ -4,6 +4,7 @@ import { Fournisseur } from 'src/app/models/fournisseur';
 import { FournisseurService } from 'src/app/services/fournisseur.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 
+
 @Component({
   selector: 'app-fournisseur-list',
   templateUrl: './fournisseur-list.component.html',
@@ -12,7 +13,6 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 export class FournisseurListComponent implements OnInit {
 
   fournisseurs!:any[];
-
   constructor(private fournisseurService:FournisseurService, private tokenStorage: TokenStorageService, private router:Router) {
 
   }
@@ -34,6 +34,7 @@ export class FournisseurListComponent implements OnInit {
   }
   updateFournisseur(id:number){
     this.router.navigate(['/dashboard','update-fournisseurs',`${id}`])
+
   }
   deleteFournisseur(id:number){
     this.fournisseurService.deleteFournisseur(id).subscribe(data=>{

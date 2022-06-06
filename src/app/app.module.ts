@@ -27,6 +27,7 @@ import { AuthService } from './services/auth.service';
     FormsModule,
     AdminModule,
     HttpClientModule
+
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

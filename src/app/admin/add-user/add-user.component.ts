@@ -32,6 +32,7 @@ export class AddUserComponent implements OnInit {
 
   goToUserList(){
     this.router.navigate(['/dashboard','userList'])
+
   }
 
   onSubmit(){
