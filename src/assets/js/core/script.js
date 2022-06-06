@@ -1,4 +1,10 @@
+function MainFront(){
+console.log("tst");
+
 let navbar = document.querySelector('.header .navbar');
+
+console.log("navbar");
+console.log(navbar);
 let searchForm = document.querySelector('.header .search-form');
 let contactInfo = document.querySelector('.contact-info');
 
@@ -96,3 +102,4 @@ var swiper = new Swiper(".logo-slider", {
       },
    },
 });
+}

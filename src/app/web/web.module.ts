@@ -13,6 +13,7 @@ import { GeneralComponent } from './general/general.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 
 
+
 @NgModule({
   declarations: [
     HeaderComponent,
